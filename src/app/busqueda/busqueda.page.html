@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+
+<ion-content [fullscreen]="true">
+    <div class="info-container borde">
+        <p><strong>Información detallada:</strong></p>
+        <p>Lugar: localidad, Ciudad</p>
+        <p>Fecha seleccionada: dd-MM-yyyy → dd-MM-yyyy</p>
+        <p>Número de adultos: X &nbsp; Número de niños: X</p>
+    </div>
+
+    <div class="options-container">
+        <ion-grid>
+            <ion-row>
+                <ion-col size="6" class="option-col">
+                    <button class="option-card" (click)="onClick('Alojamientos')">
+                        <img src="assets/images/apartamentos.png" alt="Accommodations" class="option-icon" />
+                        <p style="font-size: 20px;">Alojamientos</p>
+                    </button>
+                </ion-col>
+                <ion-col size="6" class="option-col">
+                    <button class="option-card" (click)="onClick('Excursiones')">
+                        <img src="assets/images/actividades.png" alt="Excursions" class="option-icon" />
+                        <p style="font-size: 20px;">Excursiones</p>
+                    </button>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="6" class="option-col">
+                    <button class="option-card" (click)="onClick('Ocio')">
+                        <img src="assets/images/ocio.png" alt="Leisure" class="option-icon" />
+                        <p style="font-size: 20px;">Ocio</p>
+                    </button>
+                </ion-col>
+                <ion-col size="6" class="option-col">
+                    <button class="option-card" (click)="onClick('Restaurantes')">
+                        <img src="assets/images/restaurantes.png" alt="Restaurants" class="option-icon" />
+                        <p style="font-size: 20px;">Restaurantes</p>
+                    </button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>
+
+<app-footer></app-footer>

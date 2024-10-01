@@ -1,0 +1,94 @@
+<app-navbar></app-navbar>
+
+<ion-content [fullscreen]="true">
+
+    <ion-content>
+        <div>
+            <ion-item class="borde" style="margin-left: 5%; margin-right: 5%; margin-top: 2%; font-size: 1.5em">
+            <ion-label position="floating">¿Adónde deseas ir?</ion-label><br>
+            <ion-input placeholder="Escribe aquí..."></ion-input>
+            <ion-icon name="search-outline" slot="end"></ion-icon>
+            </ion-item>
+            <div class="date-fields">
+                <ion-item class="date-item borde" style="font-size: 1.5em">
+                    <ion-label>Desde...</ion-label>
+                    <ion-datetime display-format="DD/MM/YYYY"></ion-datetime>
+                </ion-item>
+                <ion-item class="date-item borde" style="font-size: 1.5em">
+                    <ion-label>Hasta...</ion-label>
+                    <ion-datetime display-format="DD/MM/YYYY"></ion-datetime>
+                </ion-item>
+            </div>
+
+            <div class="people-fields">
+                <ion-item class="fields borde" style="font-size: 1.5em">
+                    <ion-label>Adultos</ion-label>
+                    <ion-select [(ngModel)]="adults" placeholder="0">
+                        <ion-select-option value="1">1</ion-select-option>
+                        <ion-select-option value="2">2</ion-select-option>
+                        <ion-select-option value="3">3</ion-select-option>
+                        <ion-select-option value="4">4</ion-select-option>
+                        <ion-select-option value="5">5</ion-select-option>
+                        <ion-select-option value="6">6</ion-select-option>
+                        <ion-select-option value="7">7</ion-select-option>
+                        <ion-select-option value="8">8</ion-select-option>
+                    <!-- Más opciones -->
+                    </ion-select>
+                </ion-item>
+                <ion-item class="fields borde" style="font-size: 1.5em">
+                    <ion-label>Niños</ion-label>
+                    <ion-select [(ngModel)]="children" placeholder="0">
+                        <ion-select-option value="0">0</ion-select-option>
+                        <ion-select-option value="1">1</ion-select-option>
+                        <ion-select-option value="2">2</ion-select-option>
+                        <ion-select-option value="3">3</ion-select-option>
+                        <ion-select-option value="4">4</ion-select-option>
+                        <ion-select-option value="5">5</ion-select-option>
+                        <ion-select-option value="6">6</ion-select-option>
+                        <ion-select-option value="7">7</ion-select-option>
+                        <ion-select-option value="8">8</ion-select-option>
+                <!-- Más opciones -->
+                    </ion-select>
+                </ion-item>
+                <ion-item class="fields borde" style="font-size: 1.5em">
+                    <ion-label>Nº Habitaciones</ion-label>
+                    <ion-select [(ngModel)]="rooms" placeholder="0">
+                        <ion-select-option value="1">1</ion-select-option>
+                        <ion-select-option value="2">2</ion-select-option>
+                        <ion-select-option value="3">3</ion-select-option>
+                        <ion-select-option value="4">4</ion-select-option>
+                        <ion-select-option value="5">5</ion-select-option>
+                        <ion-select-option value="6">6</ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </div>
+            <div class="buttons">
+                <ion-button color="primary" style="font-size: 1.5em">Crear grupo de interacción
+                <img src="assets/images/chatazul.png" alt="Icono" style="height: auto; width: 1.5em; margin: 2%"></ion-button>
+                <ion-button color="primary" style="font-size: 1.5em" (click)="goToSearch()">Buscar</ion-button>
+            </div>
+
+
+            <!-- Label centrado y más grande -->
+            <ion-label class="label-center">Buscar por tipo de alojamiento</ion-label>
+
+            <!-- Imágenes centradas y con espacio entre ellas, además con esquinas redondeadas -->
+            <ion-item class="accommodation-images" lines="none">
+                <ion-img src="assets/images/villa.jpg"></ion-img>
+                <ion-img src="assets/images/hotel.png"></ion-img>
+                <ion-img src="assets/images/apartamento.png"></ion-img>
+            </ion-item>
+
+            <!-- Etiquetas debajo de cada imagen -->
+            <ion-item class="accommodation-labels" lines="none">
+                <ion-label>Villa</ion-label>
+                <ion-label>Hotel</ion-label>
+                <ion-label>Apartamentos</ion-label>
+            </ion-item>
+        </div>
+    </ion-content>
+
+
+</ion-content>
+
+<app-footer></app-footer>

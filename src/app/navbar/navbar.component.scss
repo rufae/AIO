@@ -1,0 +1,23 @@
+.image-container {
+    display: flex;
+    justify-content: space-between; /* Espacio entre las imágenes */
+    align-items: center; /* Centra las imágenes verticalmente */
+    width: 100%; /* Ocupa el ancho total del contenedor */
+}
+
+.images {
+    height: 70px;
+    width: auto;
+    margin: 10px 10px; /* Espacio entre imágenes */
+    object-fit: contain; /* Mantiene la proporción de las imágenes sin distorsión */
+}
+
+/* Evita que se colapsen las imágenes */
+.images:first-child {
+    margin-left: 2%; /* Quita el margen izquierdo de la primera imagen */
+}
+
+.images:last-child {
+    margin-right: 2%; /* Quita el margen derecho de la última imagen */
+}
+

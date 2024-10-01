@@ -1,0 +1,7 @@
+{
+  "name": "AIO",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
