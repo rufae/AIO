@@ -4,24 +4,22 @@
 
     <ion-content>
         <div>
-            <ion-item class="borde" style="margin-left: 5%; margin-right: 5%; margin-top: 2%; font-size: 1.5em">
+            <ion-item class="borde" style="margin-left: 5%; margin-right: 5%; margin-top: 10%; font-size: 5vw">
             <ion-label position="floating">¿Adónde deseas ir?</ion-label><br>
             <ion-input placeholder="Escribe aquí..."></ion-input>
             <ion-icon name="search-outline" slot="end"></ion-icon>
             </ion-item>
             <div class="date-fields">
-                <ion-item class="date-item borde" style="font-size: 1.5em">
-                    <ion-label>Desde...</ion-label>
-                    <ion-datetime display-format="DD/MM/YYYY"></ion-datetime>
+                <ion-item class="date-item borde">
+                    <ion-input type="date" label="Ida"></ion-input>
                 </ion-item>
-                <ion-item class="date-item borde" style="font-size: 1.5em">
-                    <ion-label>Hasta...</ion-label>
-                    <ion-datetime display-format="DD/MM/YYYY"></ion-datetime>
+                <ion-item class="date-item borde">
+                    <ion-input type="date" label="Vuelta"></ion-input>
                 </ion-item>
             </div>
 
             <div class="people-fields">
-                <ion-item class="fields borde" style="font-size: 1.5em">
+                <ion-item class="fields borde">
                     <ion-label>Adultos</ion-label>
                     <ion-select [(ngModel)]="adults" placeholder="0">
                         <ion-select-option value="1">1</ion-select-option>

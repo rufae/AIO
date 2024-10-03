@@ -1,4 +1,5 @@
 .borde{
+  margin-top: 2%;
   border: 1px solid black;
 }
 
@@ -14,32 +15,26 @@
   flex-basis: 48%;
 }
 
-ion-datetime {
-  width: 100%;
-  --min-width: 0;
-}
-
 .people-fields {
-  max-width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  margin-right: 5%;
-  margin-left: 5%;
+    display: flex;
+    justify-content: space-between;
+    gap: 4vw; /* Añade un espacio uniforme entre las cajas */
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 5%;
+    margin-left: 5%;
+    font-size: 2.5vw;
 }
 
 .fields {
   width: 33%;
-  height: 100%;
-  min-height: 60%;
   display: flex;
   align-items: center;
 }
 
-ion-select, ion-label {
-  font-size: 16px;
+ion-label, ion-input, ion-select {
   width: 100%;
+  box-sizing: border-box;
 }
 
 ion-item.fields {
@@ -60,15 +55,18 @@ ion-button {
   --border-radius: 12px;
   padding: 20px 0;
   height: 60px;
-  font-size: 18px;
+  font-size: 1vw;
   width: 100%;
   min-height: 50px;
 }
 
-/* Centrar el label "Buscar por tipo de alojamiento" y aumentar su tamaño */
+.buttons ion-button:last-child {
+    margin-bottom: 10%; /* Aumenta el margen inferior */
+}
+
 .label-center {
   text-align: center;
-  font-size: 30px; /* Aumentamos el tamaño de la fuente */
+  font-size: 5vw;
   display: block;
   margin-top: 20px;
   font-weight: bold;
@@ -77,21 +75,21 @@ ion-button {
 /* Estilos para las imágenes */
 .accommodation-images {
   display: flex;
-  justify-content: space-around; /* Crear espacio entre las imágenes */
+  justify-content: space-around;
   align-items: center;
   margin-top: 10px;
   padding: 0 5%;
-  gap: 20px; /* Añadir separación entre las imágenes */
+  gap: 20px;
 }
 
 .accommodation-images ion-img {
-  width: 30%; /* Ajustar el tamaño de las imágenes */
+  width: 30%;
   height: auto;
-  border-radius: 15px; /* Esquinas redondeadas */
-  overflow: hidden; /* Asegurar que las esquinas redondeadas se apliquen correctamente */
-  object-fit: cover; /* Para que la imagen mantenga sus proporciones */
+  border-radius: 15px;
+  overflow: hidden;
+  object-fit: cover;
   margin: 4% 5% 0% 5%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añadir sombra */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -106,8 +104,5 @@ ion-button {
 .accommodation-labels ion-label {
   text-align: center;
   width: 30%;
-  font-size: 25px;
+  font-size: 4.2vw;
 }
-
-
-
