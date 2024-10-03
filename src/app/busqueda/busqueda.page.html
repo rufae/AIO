@@ -1,13 +1,16 @@
-<app-navbar></app-navbar>
 
-<ion-content [fullscreen]="true">
-    <div class="info-container borde">
-        <p><strong>Información detallada:</strong></p>
-        <p>Lugar: localidad, Ciudad</p>
-        <p>Fecha seleccionada: dd-MM-yyyy → dd-MM-yyyy</p>
-        <p>Número de adultos: X &nbsp; Número de niños: X</p>
-    </div>
+<ion-content>
+    <br>
+    <ion-card style="border: 1px solid black">
+        <ion-card-header>
+            <ion-card-title>Información detallada:</ion-card-title>
+            <ion-card-subtitle>Lugar: localidad, Ciudad</ion-card-subtitle>
+            <ion-card-subtitle>Fecha seleccionada: dd-MM-yyyy → dd-MM-yyyy</ion-card-subtitle>
+            <ion-card-subtitle>Número de adultos: X &nbsp; Número de niños: X</ion-card-subtitle>
+        </ion-card-header>
+    </ion-card>
 
+    <br>
     <div class="options-container">
         <ion-grid>
             <ion-row>
@@ -41,5 +44,3 @@
         </ion-grid>
     </div>
 </ion-content>
-
-<app-footer></app-footer>

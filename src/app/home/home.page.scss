@@ -1,108 +1,50 @@
-.borde{
-  margin-top: 2%;
-  border: 1px solid black;
+ion-content{
+    --padding-top: 25%;
 }
 
-.date-fields {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2%;
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-.date-item {
-  flex-basis: 48%;
-}
-
-.people-fields {
-    display: flex;
-    justify-content: space-between;
-    gap: 4vw; /* Añade un espacio uniforme entre las cajas */
+.borde {
     margin-top: 2%;
-    margin-bottom: 2%;
-    margin-right: 5%;
-    margin-left: 5%;
-    font-size: 2.5vw;
-}
-
-.fields {
-  width: 33%;
-  display: flex;
-  align-items: center;
-}
-
-ion-label, ion-input, ion-select {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-ion-item.fields {
-  --min-height: 60px;
-  --padding-top: 10px;
-  --padding-bottom: 10px;
+    border: 1px solid black;
 }
 
 /* Estilo para los botones */
-.buttons {
-  max-width: 92%;
-  margin: 0 auto;
-  margin-bottom: 5%;
-}
-
 ion-button {
-  margin-left: 0;
-  --border-radius: 12px;
-  padding: 20px 0;
-  height: 60px;
-  font-size: 1vw;
-  width: 100%;
-  min-height: 50px;
+    --border-radius: 12px;
+    padding: 20px 0;
+    height: 60px;
+    font-size: 4vw;
+    width: 100%;
+    min-height: 50px;
 }
 
-.buttons ion-button:last-child {
-    margin-bottom: 10%; /* Aumenta el margen inferior */
+ion-button:last-child {
+    margin-bottom: 10%;
 }
 
 .label-center {
-  text-align: center;
-  font-size: 5vw;
-  display: block;
-  margin-top: 20px;
-  font-weight: bold;
-}
-
-/* Estilos para las imágenes */
-.accommodation-images {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 10px;
-  padding: 0 5%;
-  gap: 20px;
+    text-align: center;
 }
 
 .accommodation-images ion-img {
-  width: 30%;
-  height: auto;
-  border-radius: 15px;
-  overflow: hidden;
-  object-fit: cover;
-  margin: 4% 5% 0% 5%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    height: auto;
+    margin: 4% 5% 0 5%;
 }
 
-
-/* Estilos para las etiquetas debajo de las imágenes */
-.accommodation-labels {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 5%;
-  margin: 2% 0% 4% 0%;
+ion-img{
+    border-radius: 15px;
+    overflow: hidden;
 }
 
-.accommodation-labels ion-label {
-  text-align: center;
-  width: 30%;
-  font-size: 4.2vw;
+.vertical{
+    vertical-align: center;
+}
+
+.sinseparacion{
+    margin-bottom: 0;
+    padding: 0;
+}
+
+ion-row{
+    margin: 4%;
 }

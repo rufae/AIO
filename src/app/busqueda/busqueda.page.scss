@@ -1,9 +1,9 @@
-/* General layout adjustments */
-.borde {
-    border: 1px solid black;
-    border-radius: 15px;
-    padding: 10px;
-    background-color: #f9f9f9;
+ion-content{
+    --padding-top: 25%;
+}
+
+ion-card-subtitle {
+    font-size: 120%;
 }
 
 .header {
@@ -11,38 +11,6 @@
     background: linear-gradient(to right, #0054e9, #007bff);
     padding: 20px;
     color: white;
-}
-
-.logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo-icon {
-    font-size: 40px;
-}
-
-.app-title {
-    margin-left: 10px;
-    font-size: 2em;
-}
-
-.app-subtitle {
-    margin-top: 5px;
-    font-size: 1.2em;
-    font-weight: 300;
-}
-
-.info-container {
-    margin: 3% auto;
-    max-width: 60%;
-    background-color: #e0eaff;
-    padding: 10px;
-    text-align: left;
-    border-radius: 15px;
-    max-height: 60%;
-    font-size: 20px;
 }
 
 .options-container {
@@ -56,14 +24,11 @@ ion-grid {
     margin: 0 auto;
 }
 
-ion-row {
-    justify-content: center; /* Center the row elements */
-}
-
 .option-col {
     padding: 5px;
     display: flex;
-    justify-content: center; /* Center the columns */
+    justify-content: center;
+    align-items: center;
 }
 
 .option-card {
@@ -71,7 +36,6 @@ ion-row {
     border: none;
     padding: 10px;
     text-align: center;
-    border-radius: 50%;
     transition: transform 0.3s;
     cursor: pointer;
     display: flex;
@@ -84,27 +48,30 @@ ion-row {
 }
 
 .option-icon {
-    width: 100%; /* Make it take the full width of the parent */
-    max-width: 200px; /* Increase the max width for larger screens */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    max-width: 150px; /* Ajusta el tamaño para pantallas más pequeñas */
+    height: auto;
     object-fit: cover;
+    border-radius: 50%;
 }
 
 p {
-    margin-top: 5px;
+    margin-top: 10px; /* Aumenta el margen superior para separar el texto de la imagen */
     font-size: 1em;
     font-weight: bold;
+    text-align: center;
+    color: black;
 }
 
-/* Responsive adjustments */
+/* Ajustes responsivos */
 @media (min-width: 768px) {
     .option-icon {
-        max-width: 180px; /* Adjust the max width for medium screens */
+        max-width: 180px; /* Ajusta el tamaño para pantallas medianas */
     }
 }
 
 @media (max-width: 768px) {
     .option-icon {
-        max-width: 150px; /* Adjust the max width for smaller screens */
+        max-width: 130px; /* Ajusta el tamaño para pantallas pequeñas */
     }
 }
