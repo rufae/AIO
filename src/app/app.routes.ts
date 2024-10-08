@@ -18,4 +18,6 @@ export const routes: Routes = [
         path: 'infoactividades',
         loadComponent: () => import('./infoactividades/infoactividades.component').then( m => m.InfoactividadesComponent)
     },
+
+
 ];
