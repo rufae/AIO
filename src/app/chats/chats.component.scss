@@ -1,0 +1,40 @@
+/* Estilos para el item del chat */
+ion-content{
+    --padding-top: 22%;
+}
+.chat-item {
+    border-bottom: 1px solid #dcdcdc;
+    padding: 10px 0;
+}
+
+.chat-item ion-avatar img {
+    border-radius: 50%;
+}
+
+.chat-item ion-label h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.chat-item ion-label p {
+    font-size: 14px;
+    color: gray;
+    margin: 5px 0 0 0;
+}
+
+/* Estilo para el fab (botón flotante) */
+ion-fab {
+    bottom: 10%; /* Subir el botón desde la parte inferior */
+    right: 20px; /* Espacio a la derecha */
+}
+
+ion-fab-button {
+    --border-radius: 50%;
+    --box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+ion-fab-button ion-icon {
+    font-size: 24px;
+}

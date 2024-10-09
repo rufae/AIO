@@ -1,5 +1,5 @@
 <ion-app>
-    <app-navbar></app-navbar>
-  <ion-router-outlet></ion-router-outlet>
-    <app-footer></app-footer>
+    <app-navbar *ngIf="navbarVisible"></app-navbar>
+    <ion-router-outlet></ion-router-outlet>
+    <app-footer *ngIf="footerVisible"></app-footer>
 </ion-app>

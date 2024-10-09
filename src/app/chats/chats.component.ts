@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import {IonicModule} from "@ionic/angular";
 import {NavbarComponent} from "../navbar/navbar.component";
 import {FooterComponent} from "../footer/footer.component";
 import {ActividadesComponent} from "../actividades/actividades.component";
-import {IonicModule} from "@ionic/angular";
+import {addIcons} from "ionicons";
+import {add} from "ionicons/icons";
 
 @Component({
-    selector: 'app-infodetallada',
-    templateUrl: './infodetallada.component.html',
-    styleUrls: ['./infodetallada.component.scss'],
+    selector: 'app-chats',
+    templateUrl: './chats.component.html',
+    styleUrls: ['./chats.component.scss'],
     standalone: true,
     imports: [
         NavbarComponent,
@@ -16,10 +18,12 @@ import {IonicModule} from "@ionic/angular";
         IonicModule
     ]
 })
-export class InfodetalladaComponent  implements OnInit {
+export class ChatsComponent  implements OnInit {
 
-    constructor() { }
+  constructor() {
+      addIcons({add});
+  }
 
-    ngOnInit() {}
+  ngOnInit() {}
 
 }

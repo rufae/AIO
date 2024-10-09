@@ -1,0 +1,73 @@
+/* Estilo para el ion-content */
+ion-content {
+    --padding-top: 0; /* Ajustamos el padding-top a 0 para que no afecte la posición inicial */
+    --background: #b9d2ff;
+}
+
+/* Estilo para el encabezado */
+
+#azul{
+    --background: #3c83f9;
+}
+
+ion-toolbar{
+    --background: #b9d2ff; /* Color de fondo azul */
+    --color: black;
+}
+
+/* Estilo para el avatar */
+ion-avatar img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%; /* Hace la imagen completamente circular */
+}
+
+/* Estilo para la fila de mensajes */
+.message-row {
+    display: flex;
+    justify-content: flex-end; /* Alinear los mensajes a la derecha */
+    padding: 10px;
+}
+
+/* Columna de mensaje */
+.message-col {
+    max-width: 60%; /* Limita el ancho máximo del mensaje */
+}
+
+/* Estilo de los mensajes */
+.message {
+    background-color: #3c83f9; /* Fondo azul para el mensaje */
+    color: white; /* Texto blanco */
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 18px;
+    word-wrap: break-word; /* Permite que las palabras largas se rompan */
+}
+
+/* Estilo para el input de mensaje */
+.message-input {
+    --placeholder-color: white; /* Cambia el color del placeholder a blanco */
+    border-radius: 20px; /* Bordes redondeados */
+    background-color: #3c83f9; /* Fondo azul para el input */
+    border: 1px solid #ddd; /* Borde claro */
+    font-size: 18px;
+    width: calc(100% - 80px); /* Ajuste para que encaje bien con los botones */
+    color: white; /* Color del texto dentro del input */
+}
+
+
+/* Estilo para los botones de la barra de herramientas */
+ion-toolbar ion-buttons {
+    --background: transparent; /* Fondo transparente para los botones */
+}
+
+ion-button {
+    --color: #3c83f9; /* Color azul para los iconos */
+    --ripple-color: #cce5ff; /* Efecto ripple en azul claro */
+}
+
+ion-icon {
+    font-size: 24px; /* Tamaño del icono */
+}
+
+
