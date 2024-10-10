@@ -20,7 +20,7 @@ export class FooterComponent  implements OnInit {
     }
 
     goToChat() {
-        this.router.navigate(['/chat']); // Cambia '/chat' a la ruta correcta
+        this.router.navigate(['/chats']); // Cambia '/chat' a la ruta correcta
     }
 
     goToBookmarks() {

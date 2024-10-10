@@ -5,6 +5,7 @@ import {FooterComponent} from "../footer/footer.component";
 import {ActividadesComponent} from "../actividades/actividades.component";
 import {addIcons} from "ionicons";
 import {add} from "ionicons/icons";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-chats',
@@ -20,10 +21,14 @@ import {add} from "ionicons/icons";
 })
 export class ChatsComponent  implements OnInit {
 
-  constructor() {
+    constructor(private router: Router) {
       addIcons({add});
-  }
+    }
 
-  ngOnInit() {}
+    goToChatUnico() {
+        this.router.navigate(['/chatunico']);
+    }
+
+    ngOnInit() {}
 
 }

@@ -26,4 +26,7 @@ export class HomePage {
     goToSearch() {
         this.router.navigate(['/busqueda']);
     }
+    goToChat() {
+        this.router.navigate(['/chats']); // Cambia '/chat' a la ruta correcta
+    }
 }
