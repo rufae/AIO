@@ -1,17 +1,21 @@
 /* Estilo para el ion-content */
 ion-content {
-    --padding-top: 0; /* Ajustamos el padding-top a 0 para que no afecte la posición inicial */
+    --padding-top: 0;
     --background: #b9d2ff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Coloca el contenido hacia el final */
+    height: 100%;
 }
 
 /* Estilo para el encabezado */
-
 #azul{
     --background: #3c83f9;
 }
 
-ion-toolbar{
-    --background: #b9d2ff; /* Color de fondo azul */
+ion-toolbar {
+    --background: #b9d2ff;
     --color: black;
 }
 
@@ -19,55 +23,57 @@ ion-toolbar{
 ion-avatar img {
     width: 35px;
     height: 35px;
-    border-radius: 50%; /* Hace la imagen completamente circular */
+    border-radius: 50%;
 }
 
 /* Estilo para la fila de mensajes */
 .message-row {
     display: flex;
-    justify-content: flex-end; /* Alinear los mensajes a la derecha */
+    justify-content: flex-end; /* Alínea los mensajes a la derecha */
     padding: 10px;
+    position: absolute;
+    bottom: 10px; /* Fija el mensaje a 10px del fondo */
+    right: 10px; /* Fija el mensaje a 10px del lado derecho */
 }
 
 /* Columna de mensaje */
 .message-col {
-    max-width: 60%; /* Limita el ancho máximo del mensaje */
+    max-width: 60%;
+    text-align: right;
 }
 
 /* Estilo de los mensajes */
 .message {
-    background-color: #3c83f9; /* Fondo azul para el mensaje */
-    color: white; /* Texto blanco */
+    background-color: #3c83f9;
+    color: white;
     padding: 10px 15px;
     border-radius: 20px;
     font-size: 18px;
-    word-wrap: break-word; /* Permite que las palabras largas se rompan */
+    word-wrap: break-word;
+    margin-left: auto;
 }
 
 /* Estilo para el input de mensaje */
 .message-input {
-    --placeholder-color: white; /* Cambia el color del placeholder a blanco */
-    border-radius: 20px; /* Bordes redondeados */
-    background-color: #3c83f9; /* Fondo azul para el input */
-    border: 1px solid #ddd; /* Borde claro */
+    --placeholder-color: white;
+    border-radius: 20px;
+    background-color: #3c83f9;
+    border: 1px solid #ddd;
     font-size: 18px;
-    width: calc(100% - 80px); /* Ajuste para que encaje bien con los botones */
-    color: white; /* Color del texto dentro del input */
+    width: calc(100% - 80px);
+    color: white;
 }
-
 
 /* Estilo para los botones de la barra de herramientas */
 ion-toolbar ion-buttons {
-    --background: transparent; /* Fondo transparente para los botones */
+    --background: transparent;
 }
 
 ion-button {
-    --color: #3c83f9; /* Color azul para los iconos */
-    --ripple-color: #cce5ff; /* Efecto ripple en azul claro */
+    --color: #3c83f9;
+    --ripple-color: #cce5ff;
 }
 
 ion-icon {
-    font-size: 24px; /* Tamaño del icono */
+    font-size: 24px;
 }
-
-
