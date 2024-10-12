@@ -5,7 +5,8 @@ import {FooterComponent} from "../footer/footer.component";
 import {ActividadesComponent} from "../actividades/actividades.component";
 import { NavbarFooterService } from '../navbar-footer.service';
 import {addIcons} from "ionicons";
-import {attach, send, menu, home} from "ionicons/icons";
+import {attach, videocamOutline, arrowUndo, ellipsisVertical, mic} from "ionicons/icons";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -22,8 +23,16 @@ import {attach, send, menu, home} from "ionicons/icons";
 })
 export class ChatUnicoComponent implements OnInit, OnDestroy {
 
-    constructor(private navbarFooterService: NavbarFooterService) {
-        addIcons({send, attach, menu, home});
+    constructor(
+        private navbarFooterService: NavbarFooterService,
+        private router: Router
+    ) {
+        addIcons({ videocamOutline, attach, arrowUndo, ellipsisVertical, mic });
+    }
+
+
+    goToChat() {
+        this.router.navigate(['/chats']); // Cambia '/chat' a la ruta correcta
     }
 
     ngOnInit() {

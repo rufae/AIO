@@ -20,20 +20,20 @@ ion-toolbar {
 }
 
 /* Estilo para el avatar */
-ion-avatar img {
-    width: 35px;
-    height: 35px;
+ion-avatar {
+    width: 13%;
+    height: 13%;
     border-radius: 50%;
 }
 
 /* Estilo para la fila de mensajes */
 .message-row {
     display: flex;
-    justify-content: flex-end; /* Alínea los mensajes a la derecha */
+    justify-content: flex-end;
     padding: 10px;
     position: absolute;
-    bottom: 10px; /* Fija el mensaje a 10px del fondo */
-    right: 10px; /* Fija el mensaje a 10px del lado derecho */
+    bottom: 10px;
+    right: 10px;
 }
 
 /* Columna de mensaje */
@@ -47,7 +47,7 @@ ion-avatar img {
     background-color: #3c83f9;
     color: white;
     padding: 10px 15px;
-    border-radius: 20px;
+    border-radius: 20px 0px 20px 20px;
     font-size: 18px;
     word-wrap: break-word;
     margin-left: auto;
@@ -55,13 +55,13 @@ ion-avatar img {
 
 /* Estilo para el input de mensaje */
 .message-input {
-    --placeholder-color: white;
-    border-radius: 20px;
+    border-radius: 100px;
     background-color: #3c83f9;
-    border: 1px solid #ddd;
+    border: 1px solid #000000;
     font-size: 18px;
-    width: calc(100% - 80px);
-    color: white;
+    width: 95%;
+    color: black;
+    margin: auto;
 }
 
 /* Estilo para los botones de la barra de herramientas */
@@ -76,4 +76,11 @@ ion-button {
 
 ion-icon {
     font-size: 24px;
+}
+.micro{
+    border-radius: 100%;
+    background-color: #3c83f9;
+    border: 1px solid #000000;
+    margin-right: 10px;
+    height: 45px;
 }

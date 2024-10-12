@@ -29,6 +29,10 @@ export const routes: Routes = [
     {
         path: 'chatunico',
         loadComponent: () => import('./chatunico/chatunico.component').then( m => m.ChatUnicoComponent)
+    },
+    {
+        path: 'paginaguardados',
+        loadComponent: () => import('./paginaguardados/paginaguardados.component').then( m => m.PaginaguardadosComponent)
     }
 
 

@@ -20,11 +20,11 @@ export class FooterComponent  implements OnInit {
     }
 
     goToChat() {
-        this.router.navigate(['/chats']); // Cambia '/chat' a la ruta correcta
+        this.router.navigate(['/chats']);
     }
 
     goToBookmarks() {
-        this.router.navigate(['/bookmarks']); // Cambia '/bookmarks' a la ruta correcta
+        this.router.navigate(['/paginaguardados']); // Cambia '/bookmarks' a la ruta correcta
     }
 
     ngOnInit(): void {
