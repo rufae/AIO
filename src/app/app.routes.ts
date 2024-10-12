@@ -19,10 +19,6 @@ export const routes: Routes = [
         loadComponent: () => import('./infoactividades/infoactividades.component').then( m => m.InfoactividadesComponent)
     },
     {
-        path: 'infodetallada',
-        loadComponent: () => import('./infodetallada/infodetallada.component').then( m => m.InfodetalladaComponent)
-    },
-    {
         path: 'chats',
         loadComponent: () => import('./chats/chats.component').then( m => m.ChatsComponent)
     },
