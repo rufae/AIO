@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import {ForgotPasswordComponent} from "./forgot-password/forgot-password.component";
 
 export const routes: Routes = [
     {
@@ -41,6 +42,17 @@ export const routes: Routes = [
     {
         path: 'newgroup',
         loadComponent: () => import('./newgroup/newgroup.component').then( m => m.NewgroupComponent)
+    },
+    {
+        path: 'forgot-password',
+        loadComponent: () => import('./forgot-password/forgot-password.component').then( m => m.ForgotPasswordComponent)
+    },
+    {
+        path: 'settings',
+        loadComponent: () => import('./settings/settings.component').then( m => m.SettingsComponent)
+    },{
+        path: 'perfil',
+        loadComponent: () => import('./perfil/perfil.component').then( m => m.PerfilComponent)
     }
 
 ];

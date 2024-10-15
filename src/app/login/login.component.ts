@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {IonicModule} from "@ionic/angular";
 import {Router} from "@angular/router";
+import {NavbarFooterService} from "../navbar-footer.service";
 
 @Component({
     selector: 'app-login',
@@ -11,9 +12,12 @@ import {Router} from "@angular/router";
         IonicModule
     ]
 })
-export class LoginComponent  implements OnInit {
+export class LoginComponent  implements OnInit, OnDestroy {
 
-    constructor(private router: Router) { }
+    constructor(
+        private navbarFooterService: NavbarFooterService,
+        private router: Router,
+    ) { }
 
     login(){
 
@@ -23,10 +27,24 @@ export class LoginComponent  implements OnInit {
         this.router.navigate(['/home']);
     }
 
+    goToForgotPassword() {
+        this.router.navigate(['/forgot-password']);
+    }
+
+
     goToRegister(){
         this.router.navigate(['/register'])
     }
 
-    ngOnInit() {}
+    ngOnInit() {
+        // Ocultar navbar y footer al entrar en la vista
+        this.navbarFooterService.setFooterVisible(false);
+    }
+
+    ngOnDestroy() {
+        // Mostrar navbar y footer al salir de la vista
+        this.navbarFooterService.setNavbarVisible(true);
+        this.navbarFooterService.setFooterVisible(true);
+    }
 
 }

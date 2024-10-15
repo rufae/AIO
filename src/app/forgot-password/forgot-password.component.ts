@@ -4,27 +4,23 @@ import {Router} from "@angular/router";
 import {NavbarFooterService} from "../navbar-footer.service";
 
 @Component({
-    selector: 'app-register',
-    templateUrl: './register.component.html',
-    styleUrls: ['./register.component.scss'],
+    selector: 'app-forgot-password',
+    templateUrl: './forgot-password.component.html',
+    styleUrls: ['./forgot-password.component.scss'],
     standalone: true,
     imports: [
         IonicModule
     ]
 })
-export class RegisterComponent  implements OnInit, OnDestroy {
+export class ForgotPasswordComponent  implements OnInit, OnDestroy {
 
-    constructor(
-        private navbarFooterService: NavbarFooterService,
+  constructor(
         private router: Router,
-    ) { }
+        private navbarFooterService: NavbarFooterService,
+  ) { }
 
-    register(){
-
-    }
-
-    goToSearch() {
-        this.router.navigate(['/login']);
+    goToSearch(){
+      this.router.navigate(['/login']);
     }
 
     ngOnInit() {

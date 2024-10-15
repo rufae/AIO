@@ -1,5 +1,5 @@
 ion-content{
-    --padding-top: 25%;
+    --padding-top: 40%;
 }
 
 .borde {
@@ -47,4 +47,9 @@ ion-img{
 
 ion-row{
     margin: 4%;
+}
+
+/* Estilo para el fab (botón flotante) */
+ion-fab {
+    top: 12%; /* Subir el botón desde la parte inferior */
 }

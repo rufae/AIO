@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { ChatUnicoComponent } from './chatunico.component';
+import { ForgotPasswordComponent } from './forgot-password.component';
 
-describe('ChatUnicoComponent', () => {
-  let component: ChatUnicoComponent;
-  let fixture: ComponentFixture<ChatUnicoComponent>;
+describe('ForgotPasswordComponent', () => {
+  let component: ForgotPasswordComponent;
+  let fixture: ComponentFixture<ForgotPasswordComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ChatUnicoComponent],
+      imports: [ForgotPasswordComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ChatUnicoComponent);
+    fixture = TestBed.createComponent(ForgotPasswordComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

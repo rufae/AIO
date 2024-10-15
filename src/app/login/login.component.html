@@ -1,3 +1,5 @@
+<ion-header></ion-header>
+
 <ion-content>
     <ion-grid>
         <!-- Título de inicio de sesión -->
@@ -27,6 +29,13 @@
             </ion-col>
         </ion-row>
 
+        <!-- Enlace de recuperación de contraseña -->
+        <ion-row class="label-center">
+            <ion-col size="12" class="ion-text-center">
+                <a (click)="goToForgotPassword()">¿Has olvidado tu contraseña? Pulsa aquí!</a>
+            </ion-col>
+        </ion-row>
+
         <!-- Botón de inicio de sesión -->
         <ion-row class="sinseparacion" style="margin-right: 3%; margin-left: 3%">
             <ion-col size="12">
@@ -35,7 +44,8 @@
                 </ion-button>
             </ion-col>
         </ion-row>
-        <!-- Botón de inicio de sesión -->
+
+        <!-- Botón de registro -->
         <ion-row class="sinseparacion" style="margin-right: 3%; margin-left: 3%">
             <ion-col size="12">
                 <ion-button color="primary" expand="block" (click)="goToRegister()">
@@ -45,3 +55,5 @@
         </ion-row>
     </ion-grid>
 </ion-content>
+
+<ion-footer></ion-footer>

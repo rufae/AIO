@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {IonicModule} from "@ionic/angular";
+import {ActionSheetController, IonicModule} from "@ionic/angular";
 import {NavbarComponent} from "../navbar/navbar.component";
 import {FooterComponent} from "../footer/footer.component";
 import {ActividadesComponent} from "../actividades/actividades.component";
@@ -25,11 +25,11 @@ export class ChatUnicoComponent implements OnInit, OnDestroy {
 
     constructor(
         private navbarFooterService: NavbarFooterService,
-        private router: Router
+        private router: Router,
+        private actionSheetController: ActionSheetController
     ) {
         addIcons({ videocamOutline, attach, arrowUndo, ellipsisVertical, mic });
     }
-
 
     goToChat() {
         this.router.navigate(['/chats']); // Cambia '/chat' a la ruta correcta
@@ -47,4 +47,33 @@ export class ChatUnicoComponent implements OnInit, OnDestroy {
         this.navbarFooterService.setFooterVisible(true);
     }
 
+    async presentActionSheet() {
+        const actionSheet = await this.actionSheetController.create({
+            header: 'Opciones',
+            buttons: [
+                {
+                    text: 'Votar Actividad',
+                    handler: () => {
+                        console.log('Votar Actividad seleccionada');
+                        // Aquí puedes agregar la lógica para votar actividad
+                    },
+                },
+                {
+                    text: 'Generar Itinerario',
+                    handler: () => {
+                        console.log('Generar Itinerario seleccionada');
+                        // Aquí puedes agregar la lógica para generar itinerario
+                    },
+                },
+                {
+                    text: 'Más',
+                    handler: () => {
+                        console.log('Más seleccionada');
+                        // Aquí puedes agregar la lógica para más opciones
+                    },
+                },
+            ],
+        });
+        await actionSheet.present();
+    }
 }

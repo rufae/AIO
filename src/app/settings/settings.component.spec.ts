@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { ChatUnicoComponent } from './chatunico.component';
+import { SettingsComponent } from './settings.component';
 
-describe('ChatUnicoComponent', () => {
-  let component: ChatUnicoComponent;
-  let fixture: ComponentFixture<ChatUnicoComponent>;
+describe('SettingsComponent', () => {
+  let component: SettingsComponent;
+  let fixture: ComponentFixture<SettingsComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ChatUnicoComponent],
+      imports: [SettingsComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ChatUnicoComponent);
+    fixture = TestBed.createComponent(SettingsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

@@ -9,11 +9,6 @@
             <ion-img src="assets/images/ocio.png"></ion-img>
         </ion-avatar>
         <ion-title>Nombre del grupo</ion-title>
-        <ion-buttons slot="end">
-            <ion-button>
-                <ion-icon name="ellipsis-vertical"></ion-icon>
-            </ion-button>
-        </ion-buttons>
     </ion-toolbar>
 </ion-header>
 
@@ -31,7 +26,7 @@
     <ion-toolbar>
         <ion-input placeholder="  Mensaje..." class="message-input">
             <ion-buttons slot="end">
-                <ion-button>
+                <ion-button (click)="presentActionSheet()">
                     <ion-icon name="attach"></ion-icon>
                 </ion-button>
                 <ion-button>

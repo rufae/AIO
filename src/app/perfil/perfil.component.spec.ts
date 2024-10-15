@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { ChatUnicoComponent } from './chatunico.component';
+import { PerfilComponent } from './perfil.component';
 
-describe('ChatUnicoComponent', () => {
-  let component: ChatUnicoComponent;
-  let fixture: ComponentFixture<ChatUnicoComponent>;
+describe('PerfilComponent', () => {
+  let component: PerfilComponent;
+  let fixture: ComponentFixture<PerfilComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ChatUnicoComponent],
+      imports: [PerfilComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ChatUnicoComponent);
+    fixture = TestBed.createComponent(PerfilComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
