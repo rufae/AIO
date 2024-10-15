@@ -25,6 +25,10 @@ export class ChatsComponent  implements OnInit {
       addIcons({add});
     }
 
+    crearGrupo(){
+        this.router.navigate(['/newgroup']);
+    }
+
     goToChatUnico() {
         this.router.navigate(['/chatunico']);
     }

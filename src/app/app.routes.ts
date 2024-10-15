@@ -29,7 +29,18 @@ export const routes: Routes = [
     {
         path: 'paginaguardados',
         loadComponent: () => import('./paginaguardados/paginaguardados.component').then( m => m.PaginaguardadosComponent)
+    },
+    {
+        path: 'login',
+        loadComponent: () => import('./login/login.component').then( m => m.LoginComponent)
+    },
+    {
+        path: 'register',
+        loadComponent: () => import('./register/register.component').then( m => m.RegisterComponent)
+    },
+    {
+        path: 'newgroup',
+        loadComponent: () => import('./newgroup/newgroup.component').then( m => m.NewgroupComponent)
     }
-
 
 ];

@@ -1,0 +1,49 @@
+ion-content {
+    --padding-top: 25%;
+    --padding-bottom: 25%;
+}
+
+/* Borde y margen para los ion-item */
+.borde {
+    margin-top: 2%;
+    border: 1px solid black;
+}
+
+/* Estilo para el botón de registro */
+ion-button {
+    --border-radius: 12px;
+    padding: 20px 0;
+    height: 60px;
+    font-size: 4vw;
+    width: 100%;
+    min-height: 50px;
+}
+
+/* Título de registro */
+.register-title {
+    font-size: 5vw;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    margin-bottom: 10%;
+}
+
+/* Centrado de la etiqueta */
+.label-center {
+    text-align: center;
+}
+
+/* Sin márgenes */
+.sinseparacion {
+    margin-bottom: 0;
+    padding: 0;
+}
+
+/* Márgenes para las filas */
+ion-row {
+    margin: 4%;
+}
+ion-button{
+    margin-top: 5%;
+    font-size: 4vw
+}

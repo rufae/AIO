@@ -1,0 +1,52 @@
+<ion-content>
+    <ion-grid>
+        <!-- Título de creación de grupo -->
+        <ion-row class="label-center">
+            <ion-col size="12">
+                <ion-label class="group-title">Crear Nuevo Grupo</ion-label>
+            </ion-col>
+        </ion-row>
+
+        <!-- Campo para el nombre del grupo -->
+        <ion-row>
+            <ion-col size="12">
+                <ion-item class="borde">
+                    <ion-label position="floating">Nombre del grupo</ion-label>
+                    <ion-input type="text" placeholder="Introduce el nombre del grupo"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+
+        <!-- Selección de imagen del grupo -->
+        <ion-row>
+            <ion-col size="12">
+                <ion-item class="borde">
+                    <ion-label position="stacked">Imagen del grupo</ion-label>
+                    <ion-input type="file" accept="image/*"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+
+        <!-- Selección de miembros para añadir -->
+        <ion-row>
+            <ion-col size="12">
+                <ion-item class="borde">
+                    <ion-label position="stacked">Añadir miembros</ion-label>
+                    <ion-select multiple="true" placeholder="Selecciona miembros">
+                        <ion-select-option >nombre del participante</ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+
+        <!-- Botón para crear el grupo -->
+        <ion-row class="sinseparacion" style="margin-right: 3%; margin-left: 3%">
+            <ion-col size="12">
+                <ion-button style="margin-top: 5%; font-size: 4vw" color="primary" expand="block" (click)="crearGrupo()">
+                    Crear Grupo
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+
