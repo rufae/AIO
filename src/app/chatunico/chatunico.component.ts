@@ -61,7 +61,7 @@ export class ChatUnicoComponent implements OnInit, OnDestroy {
                 {
                     text: 'Generar Itinerario',
                     handler: () => {
-                        console.log('Generar Itinerario seleccionada');
+                        this.router.navigate(["/crearitinerario"])
                         // Aquí puedes agregar la lógica para generar itinerario
                     },
                 },

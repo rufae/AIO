@@ -50,9 +50,18 @@ export const routes: Routes = [
     {
         path: 'settings',
         loadComponent: () => import('./settings/settings.component').then( m => m.SettingsComponent)
-    },{
+    },
+    {
         path: 'perfil',
         loadComponent: () => import('./perfil/perfil.component').then( m => m.PerfilComponent)
+    },
+    {
+        path: 'crearitinerario',
+        loadComponent: () => import('./crearitinerario/crearitinerario.component').then( m => m.CrearItinerarioComponent)
+    },
+    {
+        path: 'inicio',
+        loadComponent: () => import('./inicio/inicio.component').then( m => m.InicioComponent)
     }
 
 ];
