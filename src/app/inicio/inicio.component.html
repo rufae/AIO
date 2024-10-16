@@ -5,35 +5,25 @@
 
     <div class="intro-container">
         <img src="assets/images/AIOsf.png" alt="Logo de AIO" class="app-logo"/>
-        <p>La mejor aplicación para planificar tus viajes y chatear con tus amigos. Explora nuevos destinos y comparte tus experiencias.</p>
+        <p>¡La mejor aplicación para planificar tus viajes!</p>
     </div>
 
-    <div class="features-container">
-        <ion-card>
-            <ion-card-header>
-                <ion-card-title>Explora Destinos</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-                Descubre lugares increíbles y planifica tu próxima aventura fácilmente.
-            </ion-card-content>
-        </ion-card>
+    <swiper-container
+        class="mySwiper"
+        effect="cards"
+        grab-cursor="true"
+        [loop]="true"
+        [pagination]="{ clickable: true }">
+        <swiper-slide *ngFor="let card of cards">
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title>{{ card.title }}</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    {{ card.content }}
+                </ion-card-content>
+            </ion-card>
+        </swiper-slide>
+    </swiper-container>
 
-        <ion-card>
-            <ion-card-header>
-                <ion-card-title>Conéctate con Amigos</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-                Crea grupos de chat para compartir tus experiencias y coordinar viajes.
-            </ion-card-content>
-        </ion-card>
-
-        <ion-card>
-            <ion-card-header>
-                <ion-card-title>Organiza tu Itinerario</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-                Planifica actividades, encuentra alojamientos y disfruta de tus vacaciones sin preocupaciones.
-            </ion-card-content>
-        </ion-card>
-    </div>
 </ion-content>

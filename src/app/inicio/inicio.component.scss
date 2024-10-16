@@ -1,16 +1,19 @@
 ion-content {
-    --background: #f0f2f5;
+    --background: linear-gradient(to bottom, #0057b7, #f0f2f5);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 16px;
+    color: #fff;
     --padding-top: 25%;
+    --padding-bottom: 25%;
 }
 
 .login-button-container {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 16px;
+    margin-right: 16px;
 }
 
 .intro-container {
@@ -18,44 +21,126 @@ ion-content {
 }
 
 .app-logo {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     margin-bottom: 16px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
 }
 
 p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.5;
-    margin-bottom: 24px;
+    font-size: 1.3rem;
+    color: #f0f2f5;
+    line-height: 1.6;
+    margin-bottom: 32px;
 }
 
 .login-button {
-    --background: #3880ff;
-    --background-activated: #3171e0;
-    --border-radius: 8px;
+    --background: #007bff;
+    --background-activated: #0056b3;
+    --border-radius: 12px;
     font-weight: bold;
-    width: 100px;
+    font-size: 1.1rem;
+    width: 30%;
 }
 
-.features-container {
-    margin-top: 32px;
+/* Estilo del contenedor del carrusel Swiper */
+swiper-container {
+    margin: 50px auto;
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    --swiper-pagination-bullet-inactive-color: #cccccc;
+    --swiper-pagination-color: #0054e9;
+    --swiper-pagination-progressbar-bg-color: rgba(0, 0, 0, 0.25);
+    --swiper-scrollbar-bg-color: rgba(0, 0, 0, 0.1);
+    --swiper-scrollbar-drag-bg-color: rgba(0, 0, 0, 0.5);
 }
 
-ion-card {
-    --ion-card-background: #fff;
-    margin: 8px 0;
+/* Estilo de los elementos swiper-slide */
+swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #fff;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    height: auto;
+    text-align: center;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto hover para cada slide */
+swiper-slide:hover {
+    transform: scale(1.05);
+}
+
+/* Imagen dentro del slide (si es necesario) */
+swiper-slide img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* Estilo del contenido dentro del carrusel */
+.carousel-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos específicos para ion-card dentro del swiper-slide */
+ion-card {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+ion-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el ion-card-header y título */
+ion-card-header {
+    background-color: #f8f9fa;
+    padding: 16px;
 }
 
 ion-card-title {
-    font-size: 1.2rem;
-    color: #222;
+    font-size: 1.3rem;
     font-weight: bold;
+    color: #333;
 }
 
+/* Estilo del contenido del ion-card */
 ion-card-content {
-    font-size: 0.9rem;
-    color: #444;
+    font-size: 1rem;
+    color: #666;
+    padding: 16px;
 }
+
+/* Personalización del Swiper */
+.mySwiper {
+    --swiper-pagination-bullet-inactive-color: #bbbbbb;
+    --swiper-pagination-color: #007bff;
+}
+
+/* Ajustes de la paginación */
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: var(--swiper-pagination-bullet-inactive-color);
+    opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--swiper-pagination-color);
+    opacity: 1;
+}
+

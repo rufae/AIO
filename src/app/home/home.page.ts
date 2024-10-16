@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, CUSTOM_ELEMENTS_SCHEMA, OnInit} from '@angular/core';
 import {IonicModule} from "@ionic/angular";
 import {NavbarComponent} from "../navbar/navbar.component";
 import {FooterComponent} from "../footer/footer.component";
@@ -14,13 +14,15 @@ import {
 } from 'ionicons/icons';
 import {FormsModule} from "@angular/forms";
 import {NavbarFooterService} from "../navbar-footer.service";
+import {NgForOf} from "@angular/common";
 
 @Component({
     selector: 'app-home',
     templateUrl: 'home.page.html',
     styleUrls: ['home.page.scss'],
     standalone: true,
-    imports: [IonicModule, NavbarComponent, FooterComponent, FormsModule],
+    imports: [IonicModule, NavbarComponent, FooterComponent, FormsModule, NgForOf],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomePage implements OnInit {
     adults: number;
@@ -37,6 +39,17 @@ export class HomePage implements OnInit {
 
         addIcons({chevronDownCircle, chevronForwardCircle, chevronUpCircle, person, cog, searchOutline})
     }
+
+    images = [
+        {
+            image: "assets/images/hotel.png"
+        },
+        {
+            image: 'assets/images/apartamento.png'
+        },{
+            image: 'assets/images/villa.jpg'
+        }
+    ];
 
     goToSearch() {
         this.router.navigate(['/busqueda']);
