@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
-import {ForgotPasswordComponent} from "./forgot-password/forgot-password.component";
+import { FormsModule } from '@angular/forms';
+
 
 export const routes: Routes = [
     {
@@ -62,6 +63,15 @@ export const routes: Routes = [
     {
         path: 'inicio',
         loadComponent: () => import('./inicio/inicio.component').then( m => m.InicioComponent)
+    },
+    {
+        path: 'prueba',
+        loadComponent: () => import('./prueba/prueba.component').then( m => m.PruebaComponent)
     }
 
+
+];
+
+export const appProviders: FormsModule = [
+    FormsModule,
 ];

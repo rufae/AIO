@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { CrearitinearioComponent } from './crearitinerario.component';
+import { CrearItinerarioComponent } from './crearitinerario.component';
 
 describe('CrearitinearioComponent', () => {
-  let component: CrearitinearioComponent;
-  let fixture: ComponentFixture<CrearitinearioComponent>;
+  let component: CrearItinerarioComponent;
+  let fixture: ComponentFixture<CrearItinerarioComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [CrearitinearioComponent],
+      imports: [CrearItinerarioComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CrearitinearioComponent);
+    fixture = TestBed.createComponent(CrearItinerarioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

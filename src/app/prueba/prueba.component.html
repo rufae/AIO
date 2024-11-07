@@ -1,0 +1,28 @@
+<ion-content>
+    <br><br><br><br><br><br><br><br><br>
+    <!-- Formulario para agregar un grupo -->
+    <form (ngSubmit)="agregarGrupo()">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" [(ngModel)]="nuevoGrupo.nombre" name="nombre" required>
+
+        <label for="descripcion">Descripción:</label>
+        <input type="text" id="descripcion" [(ngModel)]="nuevoGrupo.descripcion" name="descripcion" required>
+
+        <button type="submit">Crear Grupo</button>
+    </form>
+
+    <!-- Mostrar los grupos obtenidos -->
+    <div *ngIf="grupos.length > 0">
+        <h3>Grupos:</h3>
+        <ul>
+            <li *ngFor="let grupo of grupos">
+                {{ grupo.nombre }} - {{ grupo.descripcion }}
+            </li>
+        </ul>
+    </div>
+
+    <!-- Mostrar mensaje si no hay grupos -->
+    <div *ngIf="grupos.length === 0">
+        <p>No hay grupos disponibles.</p>
+    </div>
+</ion-content>
