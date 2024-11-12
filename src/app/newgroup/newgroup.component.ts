@@ -43,6 +43,7 @@ export class NewgroupComponent implements OnInit {
                 this.nuevoGrupo.nombre = '';
                 this.nuevoGrupo.descripcion = '';
                 this.router.navigate(['/chats']);
+                this.cargarGrupos();
             },
             error: error => console.log('Error:', error),
             complete: () => console.log('Petición completada')
