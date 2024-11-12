@@ -66,9 +66,10 @@ export class ChatUnicoComponent implements OnInit, OnDestroy {
                     },
                 },
                 {
-                    text: 'Más',
+                    text: 'Participantes',
                     handler: () => {
-                        console.log('Más seleccionada');
+                        console.log('participantes seleccionado');
+                        this.router.navigate(["/participantes"])
                         // Aquí puedes agregar la lógica para más opciones
                     },
                 },

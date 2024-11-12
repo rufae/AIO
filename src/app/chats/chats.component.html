@@ -1,45 +1,16 @@
 <ion-content>
     <ion-list>
-        <!-- Chat Item -->
-        <ion-item class="chat-item" lines="none" (click)="goToChatUnico()">
+        <!-- Lista de grupos cargados dinámicamente -->
+        <ion-item *ngFor="let grupo of grupos" class="chat-item" lines="none" (click)="goToChatUnico()">
             <ion-avatar slot="start">
-                <img src="assets/images/AIOsf.png" />
+                <!-- Aquí puedes configurar la imagen para cada grupo o una imagen predeterminada -->
+                <img src="assets/images/AIOsf.png" alt="Imagen del grupo" />
             </ion-avatar>
             <ion-label>
-                <h2>Nombre del grupo</h2>
-                <p>Hola, ¡Bienvenidos!</p>
+                <h2>{{ grupo.nombre }}</h2>
+                <p>{{ grupo.descripcion || 'Sin descripción disponible' }}</p>
             </ion-label>
-            <ion-badge slot="end" color="primary">1</ion-badge>
-        </ion-item>
-        <ion-item class="chat-item" lines="none" (click)="goToChatUnico()">
-            <ion-avatar slot="start">
-                <img src="assets/images/ocio.png" />
-            </ion-avatar>
-            <ion-label>
-                <h2>Nombre del grupo</h2>
-                <p>Hola, ¡Bienvenidos!</p>
-            </ion-label>
-            <ion-badge slot="end" color="primary">5</ion-badge>
-        </ion-item>
-        <ion-item class="chat-item" lines="none" (click)="goToChatUnico()">
-            <ion-avatar slot="start">
-                <img src="assets/images/mundo.png" />
-            </ion-avatar>
-            <ion-label>
-                <h2>Nombre del grupo</h2>
-                <p>Hola, ¡Bienvenidos!</p>
-            </ion-label>
-            <ion-badge slot="end" color="primary">2</ion-badge>
-        </ion-item>
-        <ion-item class="chat-item" lines="none" (click)="goToChatUnico()">
-            <ion-avatar slot="start">
-                <img src="assets/images/restaurantes.png" />
-            </ion-avatar>
-            <ion-label>
-                <h2>Nombre del grupo</h2>
-                <p>Hola, ¡Bienvenidos!</p>
-            </ion-label>
-            <ion-badge slot="end" color="primary">3</ion-badge>
+            <ion-badge slot="end" color="primary">{{ grupo.usuarios?.length || 0 }}</ion-badge>
         </ion-item>
     </ion-list>
 

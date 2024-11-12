@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {IonicModule} from "@ionic/angular";
-import {navigate} from "ionicons/icons";
 import {Router} from "@angular/router";
+import {NgForOf, NgIf} from "@angular/common";
+import {FormsModule} from "@angular/forms";
+import { GrupoService } from '../Service/grupo.service';
+import { Grupo } from '../Model/grupo.model';
 
 @Component({
     selector: 'app-newgroup',
@@ -9,17 +12,45 @@ import {Router} from "@angular/router";
     styleUrls: ['./newgroup.component.scss'],
     standalone: true,
     imports: [
-        IonicModule
+        NgIf,
+        IonicModule,
+        NgForOf,
+        FormsModule
     ]
 })
-export class NewgroupComponent  implements OnInit {
+export class NewgroupComponent implements OnInit {
+    grupos: Grupo[] = [];
+    nuevoGrupo: Grupo = { grupoId: 0, nombre: '', descripcion: '', fechaCreacion: '', usuarios: [] };
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private grupoService: GrupoService) { }
 
-    crearGrupo(){
-        this.router.navigate(['/chats']);
+    cargarGrupos(): void {
+        this.grupoService.getGrupos().subscribe({
+            next: grupos => {
+                this.grupos = grupos;
+                console.log('Datos:', grupos);
+            },
+            error: error => console.log('Error:', error),
+            complete: () => console.log('Petición completada')
+        });
     }
 
-  ngOnInit() {}
+    agregarGrupo(): void {
+        this.grupoService.addGrupo(this.nuevoGrupo).subscribe({
+            next: grupo => {
+                console.log('Grupo agregado:', grupo);
+                this.cargarGrupos();
+                this.nuevoGrupo.nombre = '';
+                this.nuevoGrupo.descripcion = '';
+                this.router.navigate(['/chats']);
+            },
+            error: error => console.log('Error:', error),
+            complete: () => console.log('Petición completada')
+        });
+    }
+
+  ngOnInit() {
+      this.cargarGrupos();
+  }
 
 }
