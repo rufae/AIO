@@ -28,7 +28,6 @@ import {NgForOf, NgIf} from "@angular/common";
 })
 export class ChatsComponent implements OnInit {
     grupos: Grupo[] = [];
-    nuevoGrupo: Grupo = { grupoId: 0, nombre: '', descripcion: '', fechaCreacion: '', usuarios: [] };
 
     constructor(private router: Router, private grupoService: GrupoService) {
       addIcons({add});
@@ -49,7 +48,10 @@ export class ChatsComponent implements OnInit {
                 console.log('Datos:', grupos);
             },
             error: error => console.log('Error:', error),
-            complete: () => console.log('Petición completada')
+            complete: () => {
+                //this.cargarGrupos();
+                console.log('Petición completada')
+            }
         });
     }
 

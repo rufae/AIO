@@ -1,9 +1,7 @@
 <ion-content>
     <ion-list>
-        <!-- Lista de grupos cargados dinámicamente -->
         <ion-item *ngFor="let grupo of grupos" class="chat-item" lines="none" (click)="goToChatUnico()">
             <ion-avatar slot="start">
-                <!-- Aquí puedes configurar la imagen para cada grupo o una imagen predeterminada -->
                 <img src="assets/images/AIOsf.png" alt="Imagen del grupo" />
             </ion-avatar>
             <ion-label>
@@ -13,7 +11,6 @@
         </ion-item>
     </ion-list>
 
-    <!-- Botón flotante para agregar chat -->
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button color="primary" (click)="crearGrupo()">
             <ion-icon name="add"></ion-icon>

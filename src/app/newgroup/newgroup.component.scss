@@ -1,30 +1,54 @@
 ion-content {
     --padding-top: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Borde y margen para los ion-item */
-.borde {
-    margin-top: 2%;
-    border: 1px solid black;
-}
-
-/* Estilo para el botón de crear grupo */
-ion-button {
-    --border-radius: 12px;
-    padding: 20px 0;
-    height: 60px;
-    font-size: 4vw;
-    width: 100%;
-    min-height: 50px;
+/* Estilo para el contenedor del formulario */
+form {
+    max-width: 500px;
+    margin: auto;
+    padding: 0 15px;
 }
 
 /* Título de crear grupo */
 .group-title {
-    font-size: 5vw;
-    font-weight: bold;
+    font-size: 7vw;
+    font-weight: 600;
+    color: #0e2d40;
     text-align: center;
-    display: block;
-    margin-bottom: 10%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+.letra{
+    font-size:4vw;
+    font-weight: 600;
+    color: #0e2d40;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Borde personalizado y margen para los ion-item */
+.borde {
+    margin-top: 1.5%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #d1d1d1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del botón de crear grupo */
+ion-button {
+    --border-radius: 25px;
+    font-size: 4vw;
+    height: 55px;
+    margin-top: 15px;
+    font-weight: 600;
 }
 
 /* Centrado de la etiqueta */
@@ -34,11 +58,11 @@ ion-button {
 
 /* Sin márgenes */
 .sinseparacion {
-    margin-bottom: 0;
+    margin: 0;
     padding: 0;
 }
 
-/* Márgenes para las filas */
+/* Márgenes y espacio para las filas */
 ion-row {
-    margin: 4%;
+    margin: 2% 0;
 }

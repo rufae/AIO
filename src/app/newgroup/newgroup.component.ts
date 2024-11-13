@@ -39,14 +39,15 @@ export class NewgroupComponent implements OnInit {
         this.grupoService.addGrupo(this.nuevoGrupo).subscribe({
             next: grupo => {
                 console.log('Grupo agregado:', grupo);
-                this.cargarGrupos();
                 this.nuevoGrupo.nombre = '';
                 this.nuevoGrupo.descripcion = '';
                 this.router.navigate(['/chats']);
-                this.cargarGrupos();
             },
             error: error => console.log('Error:', error),
-            complete: () => console.log('Petición completada')
+            complete: () => {
+
+                console.log('Petición completada')
+            }
         });
     }
 

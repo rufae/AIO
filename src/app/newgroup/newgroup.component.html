@@ -4,11 +4,12 @@
             <!-- Título de creación de grupo -->
             <ion-row class="label-center">
                 <ion-col size="12">
-                    <ion-label class="group-title">Crear Nuevo Grupo</ion-label>
+                    <h2 class="group-title">Crear Nuevo Grupo</h2>
                 </ion-col>
             </ion-row>
 
             <!-- Campo para el nombre del grupo -->
+            <br>
             <ion-row>
                 <ion-col size="12">
                     <ion-item class="borde">
@@ -19,20 +20,29 @@
             </ion-row>
 
             <!-- Campo para la descripción del grupo -->
+
             <ion-row>
                 <ion-col size="12">
                     <ion-item class="borde">
                         <ion-label position="floating">Descripción del grupo</ion-label>
-                        <ion-input type="text" placeholder="Introduce una descripción" [(ngModel)]="nuevoGrupo.descripcion" name="descripcion" required></ion-input>
+                        <ion-textarea placeholder="Introduce una descripción" [(ngModel)]="nuevoGrupo.descripcion" name="descripcion" auto-grow="true" required></ion-textarea>
                     </ion-item>
                 </ion-col>
             </ion-row>
 
+            <ion-row>
+                <ion-col>
+                    <ion-item class="borde">
+                        <ion-label class="letra">La fecha de creación del grupo se guardara automaticamente.</ion-label>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
 
             <!-- Botón para crear el grupo -->
-            <ion-row class="sinseparacion" style="margin-right: 3%; margin-left: 3%">
+            <br><br>
+            <ion-row class="sinseparacion">
                 <ion-col size="12">
-                    <ion-button type="submit" style="margin-top: 5%; font-size: 4vw" color="primary" expand="block">
+                    <ion-button type="submit" color="primary" expand="block">
                         Crear Grupo
                     </ion-button>
                 </ion-col>
