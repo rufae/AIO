@@ -1,0 +1,43 @@
+ion-content{
+    --padding-top: 22%;
+    --padding-bottom: 22%;
+}
+
+ion-card {
+    margin: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+ion-card-header {
+    background-color: #f9f9f9;
+    border-radius: 10px 10px 0 0;
+    padding: 16px;
+}
+
+ion-card-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+
+ion-card-content {
+    padding: 16px;
+}
+
+ion-item {
+    margin-bottom: 16px;
+}
+
+ion-label {
+    font-weight: bold;
+}
+
+ion-button {
+    font-weight: bold;
+    background-color: #4CAF50;
+}
+
+ion-button:disabled {
+    background-color: #BDBDBD;
+}

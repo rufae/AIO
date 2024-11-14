@@ -1,0 +1,45 @@
+<ion-content>
+    <ion-list>
+        <!-- Itera sobre las actividades recibidas y muestra una tarjeta para cada actividad -->
+        <ion-card *ngFor="let actividad of actividades" class="actividad-card">
+            <ion-card-header class="actividad-header">
+                <ion-card-title>{{ actividad.tipoActividad }}</ion-card-title>
+                <ion-card-subtitle>{{ actividad.pais }}, {{ actividad.region }}</ion-card-subtitle>
+            </ion-card-header>
+
+            <ion-card-content>
+                <div class="actividad-info">
+                    <p><strong>Calidad:</strong> {{ actividad.calidad }}</p>
+                    <p><strong>Distancia:</strong> {{ actividad.distancia }} km</p>
+                    <p><strong>Reseñas:</strong> {{ actividad.resenas }}</p>
+                    <p><strong>Votos a Favor:</strong> {{ actividad.votosAFavor }}</p>
+                    <p><strong>Votos en Contra:</strong> {{ actividad.votosEnContra }}</p>
+                </div>
+            </ion-card-content>
+
+            <ion-item lines="none" class="votacion-buttons">
+                <!-- Botón para votar a favor -->
+                <ion-button expand="block" color="success"
+                            [disabled]="actividad.yaVoto"
+                            (click)="votarActividad(actividad.actividadId, true)">
+                    Votar a Favor
+                </ion-button>
+
+
+                <!-- Botón para votar en contra -->
+                <ion-button expand="block" color="danger"
+                            [disabled]="actividad.yaVoto"
+                            (click)="votarActividad(actividad.actividadId, false)">
+                    Votar en Contra
+                </ion-button>
+
+            </ion-item>
+        </ion-card>
+    </ion-list>
+
+    <ion-fab vertical="bottom" horizontal="end" style="padding-bottom: 18%" slot="fixed">
+        <ion-fab-button color="primary" (click)="agregarActividad()">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>

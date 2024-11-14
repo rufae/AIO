@@ -19,8 +19,9 @@ import { Grupo } from '../Model/grupo.model';
     ]
 })
 export class NewgroupComponent implements OnInit {
+    usuarioId: number = 3;
     grupos: Grupo[] = [];
-    nuevoGrupo: Grupo = { grupoId: 0, nombre: '', descripcion: '', fechaCreacion: '', usuarios: [] };
+    nuevoGrupo: Grupo = { grupoId: 0, nombre: '', descripcion: '', fechaCreacion: '', imagen: '' , usuarios: [] };
 
   constructor(private router: Router, private grupoService: GrupoService) { }
 
@@ -36,11 +37,12 @@ export class NewgroupComponent implements OnInit {
     }
 
     agregarGrupo(): void {
-        this.grupoService.addGrupo(this.nuevoGrupo).subscribe({
+        this.grupoService.addGrupo(this.nuevoGrupo, this.usuarioId).subscribe({
             next: grupo => {
                 console.log('Grupo agregado:', grupo);
                 this.nuevoGrupo.nombre = '';
                 this.nuevoGrupo.descripcion = '';
+                this.nuevoGrupo.imagen = '';
                 this.router.navigate(['/chats']);
             },
             error: error => console.log('Error:', error),

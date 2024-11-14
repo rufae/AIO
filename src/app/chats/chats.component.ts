@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
 import { GrupoService } from '../Service/grupo.service';
 import { Grupo } from '../Model/grupo.model';
 import {FormsModule} from "@angular/forms";
-import {NgForOf, NgIf} from "@angular/common";
+import {CommonModule} from "@angular/common";
 
 @Component({
     selector: 'app-chats',
@@ -22,15 +22,19 @@ import {NgForOf, NgIf} from "@angular/common";
         ActividadesComponent,
         IonicModule,
         FormsModule,
-        NgForOf,
-        NgIf
+        CommonModule
     ]
 })
 export class ChatsComponent implements OnInit {
     grupos: Grupo[] = [];
+    usuarioId: number = 3;
 
     constructor(private router: Router, private grupoService: GrupoService) {
       addIcons({add});
+    }
+
+    ngOnInit() {
+        this.cargarGruposDelUsuario();
     }
 
     crearGrupo(){
@@ -41,22 +45,15 @@ export class ChatsComponent implements OnInit {
         this.router.navigate(['/chatunico']);
     }
 
-    cargarGrupos(): void {
-        this.grupoService.getGrupos().subscribe({
+    cargarGruposDelUsuario(): void {
+        this.grupoService.getGruposPorUsuario(this.usuarioId).subscribe({
             next: grupos => {
                 this.grupos = grupos;
-                console.log('Datos:', grupos);
+                console.log('Grupos del usuario:', grupos);
             },
             error: error => console.log('Error:', error),
-            complete: () => {
-                //this.cargarGrupos();
-                console.log('Petición completada')
-            }
+            complete: () => console.log('Petición completada')
         });
-    }
-
-    ngOnInit() {
-        this.cargarGrupos();
     }
 
 }

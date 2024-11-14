@@ -19,7 +19,7 @@ import { FormsModule } from "@angular/forms";
     ]
 })
 export class ParticipantesComponent implements OnInit {
-    grupoId: number = 1;
+    grupoId: number = 17;
     usuarioId: number = 3;
     participantesAAgregar: number[] = [];
     participantesAEliminar: number[] = [];
@@ -34,7 +34,21 @@ export class ParticipantesComponent implements OnInit {
         this.cargarListaParticipantes();
     }
 
-    // Cargar participantes actuales del grupo
+    // Cargar todos los participantes disponibles para agregar al grupo
+    cargarListaParticipantes() {
+        this.grupoService.getListaParticipantes(this.usuarioId).subscribe({
+            next: (usuarios) => {
+                // Filtrar los participantes ya en el grupo
+                this.listaParticipantes = usuarios.filter((usuario) =>
+                    !this.participantesGrupo.some((participanteGrupo) => participanteGrupo.usuarioId === usuario.usuarioId)
+                );
+                console.log('Lista de participantes disponibles:', this.listaParticipantes);
+            },
+            error: (error) => console.log('Error al cargar lista de participantes:', error)
+        });
+    }
+
+    // Actualizar cargarParticipantesGrupo para recargar la lista sin los ya añadidos
     cargarParticipantesGrupo() {
         this.grupoService.getParticipantesGrupo(this.grupoId).subscribe({
             next: (grupos: Grupo[]) => {
@@ -42,22 +56,13 @@ export class ParticipantesComponent implements OnInit {
                 if (grupo && grupo.usuarios) {
                     this.participantesGrupo = grupo.usuarios;
                     console.log('Participantes del grupo:', this.participantesGrupo);
+                    // Recargar la lista de participantes disponibles
+                    this.cargarListaParticipantes();
                 } else {
                     console.log('No se encontró el grupo o la propiedad usuarios');
                 }
             },
             error: (error) => console.log('Error al cargar participantes del grupo:', error)
-        });
-    }
-
-    // Cargar todos los participantes disponibles para agregar al grupo
-    cargarListaParticipantes() {
-        this.grupoService.getListaParticipantes(this.usuarioId).subscribe({
-            next: (usuarios) => {
-                this.listaParticipantes = usuarios;
-                console.log('Lista de participantes disponibles:', this.listaParticipantes);
-            },
-            error: (error) => console.log('Error al cargar lista de participantes:', error)
         });
     }
 
@@ -98,6 +103,17 @@ export class ParticipantesComponent implements OnInit {
                 this.cargarParticipantesGrupo();  // Actualizar la lista después de eliminar
             },
             error: (error) => console.log(`Error al eliminar participante ${usuarioId}:`, error)
+        });
+    }
+
+    // Método para abandonar el grupo (para el usuario actual)
+    abandonarGrupo() {
+        this.grupoService.removeParticipante(this.grupoId, this.usuarioId).subscribe({
+            next: () => {
+                console.log(`El usuario ${this.usuarioId} ha abandonado el grupo ${this.grupoId}`);
+                this.cargarParticipantesGrupo();  // Actualizar la lista después de que el usuario abandona el grupo
+            },
+            error: (error) => console.log(`Error al abandonar el grupo:`, error)
         });
     }
 

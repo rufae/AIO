@@ -5,5 +5,6 @@ export interface Grupo {
     nombre: string;
     descripcion: string;
     fechaCreacion: string;
+    imagen: string;
     usuarios: Usuario[];
 }

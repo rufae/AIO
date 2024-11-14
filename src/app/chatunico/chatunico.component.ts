@@ -52,17 +52,16 @@ export class ChatUnicoComponent implements OnInit, OnDestroy {
             header: 'Opciones',
             buttons: [
                 {
-                    text: 'Votar Actividad',
+                    text: 'Proponer Actividad',
                     handler: () => {
                         console.log('Votar Actividad seleccionada');
-                        // Aquí puedes agregar la lógica para votar actividad
+                        this.router.navigate(["/actividadporgrupo"])
                     },
                 },
                 {
                     text: 'Generar Itinerario',
                     handler: () => {
                         this.router.navigate(["/crearitinerario"])
-                        // Aquí puedes agregar la lógica para generar itinerario
                     },
                 },
                 {
@@ -70,9 +69,16 @@ export class ChatUnicoComponent implements OnInit, OnDestroy {
                     handler: () => {
                         console.log('participantes seleccionado');
                         this.router.navigate(["/participantes"])
-                        // Aquí puedes agregar la lógica para más opciones
                     },
                 },
+                {
+                    text: 'Info del grupo',
+                    handler: () => {
+                        console.log('información seleccionada');
+                        const grupoId: number = 1;
+                        this.router.navigate([`/informacion/${grupoId}`])
+                    },
+                }
             ],
         });
         await actionSheet.present();

@@ -8,6 +8,7 @@ import { Usuario } from '../Model/usuario.model';
     providedIn: 'root'
 })
 export class GrupoService {
+
     constructor(private http: HttpClient) { }
 
     // Obtener todos los grupos
@@ -16,8 +17,8 @@ export class GrupoService {
     }
 
     // Crear un nuevo grupo
-    addGrupo(grupo: Grupo): Observable<Grupo> {
-        return this.http.post<Grupo>('/api/viaje/nuevo', grupo);
+    addGrupo(grupo: Grupo, usuarioId: number): Observable<Grupo> {
+        return this.http.post<Grupo>(`/api/viaje/nuevo?usuarioId=${usuarioId}`, grupo);
     }
 
     // Agregar un participante al grupo
@@ -38,6 +39,16 @@ export class GrupoService {
     // Obtener la lista de todos los usuarios disponibles para agregar a un grupo
     getListaParticipantes(usuarioId: number): Observable<Usuario[]> {
         return this.http.get<Usuario[]>(`api/amigos?usuarioId=${usuarioId}`);
+    }
+
+    // Método para obtener grupos de un usuario específico
+    getGruposPorUsuario(usuarioId: number): Observable<Grupo[]> {
+        return this.http.get<Grupo[]>(`api/viaje/usuario/${usuarioId}/grupos`);
+    }
+
+    // Obtener un grupo por su ID
+    getGrupoPorId(grupoId: number): Observable<Grupo> {
+        return this.http.get<Grupo>(`/api/viaje/grupo/${grupoId}`);
     }
 }
 

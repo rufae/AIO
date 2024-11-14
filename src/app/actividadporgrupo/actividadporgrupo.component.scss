@@ -1,0 +1,46 @@
+ion-content{
+    --padding-top: 22%;
+    --padding-bottom: 22%;
+}
+
+.actividad-card {
+    margin-bottom: 16px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+
+    .actividad-header {
+        background-color: #f1f1f1;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding: 10px;
+    }
+
+    .actividad-info {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #555;
+        padding: 0 16px 16px;
+
+        p {
+            margin: 8px 0;
+        }
+
+        strong {
+            color: #333;
+        }
+    }
+
+    .votacion-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 16px 16px;
+    }
+}
+
+ion-button {
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+}

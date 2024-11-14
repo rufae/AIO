@@ -1,5 +1,4 @@
-import { Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import {Routes} from '@angular/router';
 
 
 export const routes: Routes = [
@@ -67,11 +66,21 @@ export const routes: Routes = [
     {
         path: 'participantes',
         loadComponent: () => import('./participantes/participantes.component').then( m => m.ParticipantesComponent)
+    },
+    {
+        path: 'proponer-actividad',
+        loadComponent: () => import('./proponer-actividad/proponer-actividad.component').then( m => m.ProponerActividadComponent)
+    },
+    {
+        path: 'actividadporgrupo',
+        loadComponent: () => import('./actividadporgrupo/actividadporgrupo.component').then( m => m.ActividadporgrupoComponent)
+    },
+    {
+        path: 'informacion/:grupoId',
+        loadComponent: () => import('./informacion/informacion.component').then( m => m.InformacionComponent)
     }
 
 
 ];
 
-export const appProviders: FormsModule = [
-    FormsModule,
-];
+

@@ -9,3 +9,9 @@ export interface Voto {
     usuario: Usuario;
     propuesta: Propuesta;
 }
+export interface VotoDTO{
+    votoId: number;
+    votoAFavor: boolean;
+    actividadId: number;
+    usuarioId: number;
+}

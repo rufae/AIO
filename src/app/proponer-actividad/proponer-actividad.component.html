@@ -1,0 +1,59 @@
+<ion-content>
+    <form (ngSubmit)="crearActividad()" #actividadForm="ngForm">
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title>Crear Nueva Actividad</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+                <ion-item>
+                    <ion-label position="floating">Grupo ID</ion-label>
+                    <ion-input type="number" [(ngModel)]="actividad.grupo_id" name="grupo_id" required></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label position="floating">Calidad</ion-label>
+                    <ion-input type="text" [(ngModel)]="actividad.calidad" name="calidad" required></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label position="floating">Distancia</ion-label>
+                    <ion-input type="text" [(ngModel)]="actividad.distancia" name="distancia" required></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label position="floating">País</ion-label>
+                    <ion-input type="text" [(ngModel)]="actividad.pais" name="pais" required></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label position="floating">Región</ion-label>
+                    <ion-input type="text" [(ngModel)]="actividad.region" name="region" required></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label position="floating">Reseñas</ion-label>
+                    <ion-input type="text" [(ngModel)]="actividad.resenas" name="resenas" required></ion-input>
+                </ion-item>
+
+                <!-- Tipo de Actividad con ion-select -->
+                <ion-item>
+                    <ion-label position="floating">Tipo de Actividad</ion-label>
+                    <ion-select [(ngModel)]="actividad.tipoActividad" name="tipoActividad" required>
+                        <ion-select-option *ngFor="let tipo of tiposActividad" [value]="tipo">{{ tipo }}</ion-select-option>
+                    </ion-select>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>¿Guardar?</ion-label>
+                    <ion-checkbox [(ngModel)]="actividad.guardada" name="guardada"></ion-checkbox>
+                </ion-item>
+
+                <!-- Botón de Envío -->
+                <ion-button expand="full" type="submit" [disabled]="!actividadForm.valid">
+                    Crear Actividad
+                </ion-button>
+            </ion-card-content>
+        </ion-card>
+    </form>
+</ion-content>

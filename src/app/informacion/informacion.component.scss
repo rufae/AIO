@@ -1,0 +1,54 @@
+ion-content {
+    --padding-top: 25%;
+
+    .group-image {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    .group-name {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #222222;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .group-description {
+        font-size: 2rem;
+        color: #666;
+        text-align: center;
+        margin: 10px 0 15px;
+    }
+
+    .group-date {
+        font-size: 1.2rem;
+        color: #4c4c4c;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .participants-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #333;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .participants-list {
+        ion-item {
+            --inner-padding-top: 8px;
+            --inner-padding-bottom: 8px;
+            color: #333;
+            font-size: 1rem;
+
+            ion-label {
+                color: #333;
+            }
+        }
+    }
+}
