@@ -42,9 +42,9 @@
             <ion-label>Opciones de Cuenta</ion-label>
         </ion-item-divider>
 
-        <ion-item button>
+        <ion-item button (click)="goToLogin()">
             <ion-icon slot="start" name="log-out-outline"></ion-icon>
-            <ion-label (click)="goToLogin()">Desconectarse</ion-label>
+            <ion-label>Desconectarse</ion-label>
         </ion-item>
 
         <ion-item button>

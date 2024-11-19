@@ -2,6 +2,9 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {IonicModule} from "@ionic/angular";
 import {Router} from "@angular/router";
 import {NavbarFooterService} from "../navbar-footer.service";
+import {FormsModule} from "@angular/forms";
+import {CommonModule} from "@angular/common";
+import {AuthService} from "../Service/auth.service";
 
 @Component({
     selector: 'app-login',
@@ -9,22 +12,34 @@ import {NavbarFooterService} from "../navbar-footer.service";
     styleUrls: ['./login.component.scss'],
     standalone: true,
     imports: [
-        IonicModule
+        IonicModule,
+        FormsModule,
+        CommonModule
     ]
 })
 export class LoginComponent  implements OnInit, OnDestroy {
 
+    username = '';
+    password = '';
+    errorMessage = '';
+
     constructor(
         private navbarFooterService: NavbarFooterService,
         private router: Router,
+        private authService: AuthService
     ) { }
 
-    login(){
-
-    }
-
-    goToSearch() {
-        this.router.navigate(['/home']);
+    login() {
+        this.authService.login(this.username, this.password).subscribe({
+            next: (response: any) => {
+                console.log("Usuario ID recibido:", response.usuarioId);
+                this.authService.setusuarioId(response.usuarioId);
+                this.router.navigate(['/home']);
+            },
+            error: (error) => {
+                this.errorMessage = 'Usuario o contraseña incorrectos';
+            },
+        });
     }
 
     goToForgotPassword() {

@@ -5,6 +5,7 @@ import {NgForOf, NgIf} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import { GrupoService } from '../Service/grupo.service';
 import { Grupo } from '../Model/grupo.model';
+import {UsuarioService} from "../Service/usuario.service";
 
 @Component({
     selector: 'app-newgroup',
@@ -19,11 +20,13 @@ import { Grupo } from '../Model/grupo.model';
     ]
 })
 export class NewgroupComponent implements OnInit {
-    usuarioId: number = 1;
+    usuarioId: number = 0;
     grupos: Grupo[] = [];
     nuevoGrupo: Grupo = { grupoId: 0, nombre: '', descripcion: '', fechaCreacion: '', imagen: '' , usuarios: [] };
 
-  constructor(private router: Router, private grupoService: GrupoService) { }
+  constructor(private router: Router,
+              private grupoService: GrupoService,
+              private usuarioService: UsuarioService) { }
 
     cargarGrupos(): void {
         this.grupoService.getGrupos().subscribe({
@@ -54,6 +57,7 @@ export class NewgroupComponent implements OnInit {
     }
 
   ngOnInit() {
+      this.usuarioId = this.usuarioService.getUsuarioId() || 0;
       this.cargarGrupos();
   }
 

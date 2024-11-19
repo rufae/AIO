@@ -11,6 +11,7 @@ import {addIcons} from "ionicons";
 import {add} from "ionicons/icons";
 import {VotoService} from "../Service/voto.service";
 import {GrupoService} from "../Service/grupo.service";
+import {UsuarioService} from "../Service/usuario.service";
 
 @Component({
     selector: 'app-actividadporgrupo',
@@ -27,7 +28,7 @@ import {GrupoService} from "../Service/grupo.service";
 })
 export class ActividadporgrupoComponent implements OnInit {
     actividades: ActividadConVotosDTO[] = [];
-    usuarioId: number = 1;
+    usuarioId: number = 0;
     grupo: any;
     grupoId!: number;
 
@@ -36,7 +37,8 @@ export class ActividadporgrupoComponent implements OnInit {
         private grupoService: GrupoService,
         private route: ActivatedRoute,
         private router: Router,
-        private votoService: VotoService
+        private votoService: VotoService,
+        private usuarioService: UsuarioService,
     ) {
         addIcons({add});
         const grupoIdFromQuery = this.route.snapshot.queryParamMap.get('grupoId');
@@ -46,6 +48,7 @@ export class ActividadporgrupoComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.usuarioId = this.usuarioService.getUsuarioId() || 0;
 
         this.route.paramMap.subscribe(params => {
             const id = params.get('grupoId');

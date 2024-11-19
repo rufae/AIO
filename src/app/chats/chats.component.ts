@@ -10,6 +10,7 @@ import { GrupoService } from '../Service/grupo.service';
 import { Grupo } from '../Model/grupo.model';
 import {FormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
+import {UsuarioService} from "../Service/usuario.service";
 
 @Component({
     selector: 'app-chats',
@@ -27,14 +28,25 @@ import {CommonModule} from "@angular/common";
 })
 export class ChatsComponent implements OnInit {
     grupos: Grupo[] = [];
-    usuarioId: number = 1;
+    usuarioId: number = 0;
 
-    constructor(private router: Router, private grupoService: GrupoService) {
+    constructor(private router: Router,
+                private grupoService: GrupoService,
+                private usuarioService: UsuarioService)
+    {
       addIcons({add});
     }
 
     ngOnInit() {
-        this.cargarGruposDelUsuario();
+        this.usuarioId = this.usuarioService.getUsuarioId() || 0;
+        console.log('Usuario ID:', this.usuarioId);
+
+        if (this.usuarioId === 0) {
+            console.log("Usuario no autenticado, redirigiendo a login...");
+            this.router.navigate(['/login']);
+        } else {
+            this.cargarGruposDelUsuario();
+        }
     }
 
     crearGrupo(){

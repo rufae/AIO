@@ -6,6 +6,7 @@ import { NgForOf, NgIf } from "@angular/common";
 import { IonicModule } from "@ionic/angular";
 import { FormsModule } from "@angular/forms";
 import {ActivatedRoute} from "@angular/router";
+import {UsuarioService} from "../Service/usuario.service";
 
 @Component({
     selector: 'app-participantes',
@@ -20,7 +21,7 @@ import {ActivatedRoute} from "@angular/router";
     ]
 })
 export class ParticipantesComponent implements OnInit {
-    usuarioId: number = 1;
+    usuarioId: number = 0;
     participantesAAgregar: number[] = [];
     participantesAEliminar: number[] = [];
     grupoId!: number;
@@ -37,9 +38,13 @@ export class ParticipantesComponent implements OnInit {
         usuarios: []
     };
 
-    constructor(private grupoService: GrupoService, private route: ActivatedRoute) { }
+    constructor(private grupoService: GrupoService,
+                private route: ActivatedRoute,
+                private usuarioService: UsuarioService) { }
 
     ngOnInit() {
+        this.usuarioId = this.usuarioService.getUsuarioId() || 0;
+
         this.route.paramMap.subscribe(params => {
             const id = params.get('grupoId');
             if (id) {
@@ -77,7 +82,7 @@ export class ParticipantesComponent implements OnInit {
     cargarParticipantesGrupo() {
         this.grupoService.getParticipantesGrupo(this.grupoId).subscribe({
             next: (grupos: Grupo[]) => {
-                const grupo = grupos[0];  // Accede al primer elemento de la lista
+                const grupo = grupos[0];
                 if (grupo && grupo.usuarios) {
                     this.participantesGrupo = grupo.usuarios;
                     console.log('Participantes del grupo:', this.participantesGrupo);

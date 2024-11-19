@@ -77,7 +77,7 @@ export class ChatUnicoComponent implements OnInit, OnDestroy {
             header: 'Opciones',
             buttons: [
                 {
-                    text: 'Proponer Actividad',
+                    text: 'Proponer/Votar Actividad',
                     handler: () => {
                         console.log('Votar Actividad seleccionada');
                         this.router.navigate([`/actividadporgrupo/${this.grupoId}`]);

@@ -4,11 +4,11 @@
             <ion-avatar>
                 <img src="assets/images/AIOsf.png" alt="Foto del usuario"/>
             </ion-avatar>
-            <ion-card-title>Nombre del Usuario</ion-card-title>
-            <ion-card-subtitle>&#64;usuario</ion-card-subtitle>
+            <ion-card-title>{{ usuario.username || 'Nombre del Usuario' }}</ion-card-title>
+            <ion-card-subtitle>&#64;{{ usuario.username || 'usuario' }}</ion-card-subtitle>
         </ion-card-header>
         <ion-card-content>
-            <p>Bio del usuario: ¡Hola! Soy un viajero apasionado. Me encanta explorar nuevos lugares y compartir mis experiencias.</p>
+            <p>Bio del usuario: {{ usuario.bio || '¡Hola! Soy un viajero apasionado.' }}</p>
         </ion-card-content>
     </ion-card>
 
@@ -17,28 +17,12 @@
             <ion-label>Viajes</ion-label>
         </ion-item-divider>
 
-        <ion-item>
+        <ion-item *ngFor="let grupo of grupos">
             <ion-label>
-                <h2>Viaje a París</h2>
-                <p>Del 12 al 20 de noviembre</p>
+                <h2>{{ grupo.nombre }}</h2>
+                <p>{{ grupo.descripcion }}</p>
             </ion-label>
             <ion-icon slot="end" name="airplane"></ion-icon>
-        </ion-item>
-
-        <ion-item>
-            <ion-label>
-                <h2>Escapada a la montaña</h2>
-                <p>Del 5 al 7 de diciembre</p>
-            </ion-label>
-            <ion-icon slot="end" name="walk"></ion-icon>
-        </ion-item>
-
-        <ion-item>
-            <ion-label>
-                <h2>Playa en Cancún</h2>
-                <p>Del 15 al 25 de enero</p>
-            </ion-label>
-            <ion-icon slot="end" name="umbrella"></ion-icon>
         </ion-item>
     </ion-list>
 </ion-content>

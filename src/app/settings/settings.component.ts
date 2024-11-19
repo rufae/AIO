@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {IonicModule} from "@ionic/angular";
-import {Router} from "@angular/router";
+import { IonicModule } from "@ionic/angular";
+import { Router } from "@angular/router";
+import { AuthService } from '../Service/auth.service';
 
 @Component({
     selector: 'app-settings',
@@ -11,14 +12,18 @@ import {Router} from "@angular/router";
         IonicModule
     ]
 })
-export class SettingsComponent  implements OnInit {
+export class SettingsComponent implements OnInit {
 
-  constructor(private router: Router) { }
+    constructor(
+        private router: Router,
+        private authService: AuthService
+    ) { }
 
-    goToLogin(){
-      this.router.navigate(["/login"])
+    goToLogin() {
+        this.authService.logout();
+        this.router.navigate(["/login"]);
     }
 
-  ngOnInit() {}
+    ngOnInit() { }
 
 }
