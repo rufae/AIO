@@ -1,4 +1,5 @@
-import {Routes} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
+import {NgModule} from "@angular/core";
 
 
 export const routes: Routes = [
@@ -24,7 +25,7 @@ export const routes: Routes = [
         loadComponent: () => import('./chats/chats.component').then( m => m.ChatsComponent)
     },
     {
-        path: 'chatunico',
+        path: 'chatunico/:grupoId',
         loadComponent: () => import('./chatunico/chatunico.component').then( m => m.ChatUnicoComponent)
     },
     {
@@ -64,7 +65,7 @@ export const routes: Routes = [
         loadComponent: () => import('./inicio/inicio.component').then( m => m.InicioComponent)
     },
     {
-        path: 'participantes',
+        path: 'participantes/:grupoId',
         loadComponent: () => import('./participantes/participantes.component').then( m => m.ParticipantesComponent)
     },
     {
@@ -72,7 +73,7 @@ export const routes: Routes = [
         loadComponent: () => import('./proponer-actividad/proponer-actividad.component').then( m => m.ProponerActividadComponent)
     },
     {
-        path: 'actividadporgrupo',
+        path: 'actividadporgrupo/:grupoId',
         loadComponent: () => import('./actividadporgrupo/actividadporgrupo.component').then( m => m.ActividadporgrupoComponent)
     },
     {
@@ -83,4 +84,9 @@ export const routes: Routes = [
 
 ];
 
+@NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+})
+export class AppRoutingModule {}
 

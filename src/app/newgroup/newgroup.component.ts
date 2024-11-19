@@ -19,7 +19,7 @@ import { Grupo } from '../Model/grupo.model';
     ]
 })
 export class NewgroupComponent implements OnInit {
-    usuarioId: number = 3;
+    usuarioId: number = 1;
     grupos: Grupo[] = [];
     nuevoGrupo: Grupo = { grupoId: 0, nombre: '', descripcion: '', fechaCreacion: '', imagen: '' , usuarios: [] };
 

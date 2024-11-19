@@ -27,7 +27,7 @@ import {CommonModule} from "@angular/common";
 })
 export class ChatsComponent implements OnInit {
     grupos: Grupo[] = [];
-    usuarioId: number = 3;
+    usuarioId: number = 1;
 
     constructor(private router: Router, private grupoService: GrupoService) {
       addIcons({add});
@@ -41,8 +41,8 @@ export class ChatsComponent implements OnInit {
         this.router.navigate(['/newgroup']);
     }
 
-    goToChatUnico() {
-        this.router.navigate(['/chatunico']);
+    goToChatUnico(grupoId: number) {
+        this.router.navigate([`/chatunico/${grupoId}`]);
     }
 
     cargarGruposDelUsuario(): void {

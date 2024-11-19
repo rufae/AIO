@@ -51,6 +51,3 @@ export class GrupoService {
         return this.http.get<Grupo>(`/api/viaje/grupo/${grupoId}`);
     }
 }
-
-
-// para arrancar ng serve --proxy-config proxy.conf.json

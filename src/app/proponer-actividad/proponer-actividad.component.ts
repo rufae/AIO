@@ -30,23 +30,30 @@ export class ProponerActividadComponent implements OnInit{
         guardada: false
     };
 
-    // Aquí usamos Object.values para obtener solo los valores del enum (OCIO, RESTAURANTE, EXCURSION, ALOJAMIENTO)
     tiposActividad = Object.values(TipoActividad);
 
     constructor(private actividadService: ActividadService, private router: Router) { }
 
     crearActividad() {
-        const usuarioId = 1; // Este valor debería ser dinámico, lo puedes obtener del servicio de autenticación
+        const usuarioId = 1;
+        const grupoId = this.actividad.grupo_id;
+
+        if (!grupoId) {
+            console.error('grupoId no definido');
+            return;
+        }
+
         this.actividadService.crearActividad(this.actividad, usuarioId).subscribe({
             next: (response) => {
                 console.log('Actividad creada:', response);
-                this.router.navigate(['/actividadporgrupo']);
+                this.router.navigate(['/actividadporgrupo', grupoId]);
             },
             error: (error) => {
                 console.error('Error al crear actividad:', error);
             }
         });
     }
+
 
     ngOnInit(){
         console.log('Tipos de Actividad:', this.tiposActividad);

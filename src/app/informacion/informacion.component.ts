@@ -22,7 +22,6 @@ import {CommonModule} from "@angular/common";
     ]
 })
 export class InformacionComponent implements OnInit {
-    grupoId: number = 0;
     grupo: Grupo = {
         grupoId: 0,
         nombre: '',
@@ -31,6 +30,7 @@ export class InformacionComponent implements OnInit {
         imagen: '',
         usuarios: []
     };
+    grupoId!: number;
 
     constructor(
         private grupoService: GrupoService,
@@ -38,6 +38,16 @@ export class InformacionComponent implements OnInit {
     ) {}
 
     ngOnInit() {
+        this.route.paramMap.subscribe(params => {
+            const id = params.get('grupoId');
+            if (id) {
+                this.grupoId = +id;
+                this.cargarGrupo();
+            } else {
+                console.error('No se pudo obtener el grupoId de la URL');
+            }
+        });
+
         const id = this.route.snapshot.paramMap.get('grupoId');
         console.log('Grupo ID obtenido de la URL:', id);
         if (id) {

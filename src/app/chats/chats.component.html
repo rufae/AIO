@@ -1,6 +1,6 @@
 <ion-content>
     <ion-list>
-        <ion-item *ngFor="let grupo of grupos" class="chat-item" lines="none" (click)="goToChatUnico()">
+        <ion-item *ngFor="let grupo of grupos" class="chat-item" lines="none" (click)="goToChatUnico(grupo.grupoId)">
             <ion-avatar slot="start">
                 <img src="assets/images/AIOsf.png" alt="Imagen del grupo" />
             </ion-avatar>

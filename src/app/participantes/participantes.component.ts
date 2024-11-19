@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { GrupoService } from '../Service/grupo.service';
 import { Usuario } from '../Model/usuario.model';
-import { Grupo } from '../Model/grupo.model';  // Asegúrate de tener el modelo Grupo definido
+import { Grupo } from '../Model/grupo.model';
 import { NgForOf, NgIf } from "@angular/common";
 import { IonicModule } from "@ionic/angular";
 import { FormsModule } from "@angular/forms";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
     selector: 'app-participantes',
@@ -19,26 +20,50 @@ import { FormsModule } from "@angular/forms";
     ]
 })
 export class ParticipantesComponent implements OnInit {
-    grupoId: number = 17;
-    usuarioId: number = 3;
+    usuarioId: number = 1;
     participantesAAgregar: number[] = [];
     participantesAEliminar: number[] = [];
+    grupoId!: number;
 
     listaParticipantes: Usuario[] = [];
     participantesGrupo: Usuario[] = [];
 
-    constructor(private grupoService: GrupoService) { }
+    grupo: Grupo = {
+        grupoId: 0,
+        nombre: '',
+        descripcion: '',
+        fechaCreacion: '',
+        imagen: '',
+        usuarios: []
+    };
+
+    constructor(private grupoService: GrupoService, private route: ActivatedRoute) { }
 
     ngOnInit() {
+        this.route.paramMap.subscribe(params => {
+            const id = params.get('grupoId');
+            if (id) {
+                this.grupoId = +id;
+                this.cargarGrupo();
+            } else {
+                console.error('No se pudo obtener el grupoId de la URL');
+            }
+        });
         this.cargarParticipantesGrupo();
         this.cargarListaParticipantes();
+    }
+
+    cargarGrupo(): void {
+        this.grupoService.getGrupoPorId(this.grupoId).subscribe({
+            next: (grupo) => (this.grupo = grupo),
+            error: (error) => console.error('Error al cargar grupo:', error)
+        });
     }
 
     // Cargar todos los participantes disponibles para agregar al grupo
     cargarListaParticipantes() {
         this.grupoService.getListaParticipantes(this.usuarioId).subscribe({
             next: (usuarios) => {
-                // Filtrar los participantes ya en el grupo
                 this.listaParticipantes = usuarios.filter((usuario) =>
                     !this.participantesGrupo.some((participanteGrupo) => participanteGrupo.usuarioId === usuario.usuarioId)
                 );
@@ -72,7 +97,7 @@ export class ParticipantesComponent implements OnInit {
         this.participantesAAgregar.forEach((usuarioId) => {
             this.grupoService.addParticipante(this.grupoId, usuarioId).subscribe({
                 next: () => {
-                    console.log(`Participante ${usuarioId} agregado al grupo ${this.grupoId}`),
+                    console.log(`Participante ${usuarioId} agregado al grupo ${this.grupoId}`);
                     this.cargarParticipantesGrupo();
                 },
                 error: (error) => console.log(`Error al agregar participante ${usuarioId}:`, error)
