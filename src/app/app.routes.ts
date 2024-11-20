@@ -9,7 +9,7 @@ export const routes: Routes = [
     },
     {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'inicio',
         pathMatch: 'full',
     },
     {
@@ -69,7 +69,7 @@ export const routes: Routes = [
         loadComponent: () => import('./participantes/participantes.component').then( m => m.ParticipantesComponent)
     },
     {
-        path: 'proponer-actividad',
+        path: 'proponer-actividad/:grupoId',
         loadComponent: () => import('./proponer-actividad/proponer-actividad.component').then( m => m.ProponerActividadComponent)
     },
     {

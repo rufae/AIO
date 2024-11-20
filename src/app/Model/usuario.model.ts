@@ -3,5 +3,7 @@ export interface Usuario {
     username: string;
     password: string;
     fechaRegistro: string;
+    bio: string;
+    imagen: string;
     amigos: Usuario[];
 }

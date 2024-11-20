@@ -1,5 +1,5 @@
 <ion-content>
-    <ion-list>
+    <ion-list *ngIf="actividades.length > 0; else noActivity">
         <!-- Itera sobre las actividades recibidas y muestra una tarjeta para cada actividad -->
         <ion-card *ngFor="let actividad of actividades" class="actividad-card">
             <ion-card-header class="actividad-header">
@@ -36,6 +36,12 @@
             </ion-item>
         </ion-card>
     </ion-list>
+
+    <ng-template #noActivity>
+        <ion-item>
+            <ion-label style="font-size: 5vw; margin: 4%; text-align: center">Ninguna actividad disponible</ion-label>
+        </ion-item>
+    </ng-template>
 
     <ion-fab vertical="bottom" horizontal="end" style="padding-bottom: 18%" slot="fixed">
         <ion-fab-button color="primary" (click)="agregarActividad()">

@@ -6,9 +6,9 @@
             </ion-button>
         </ion-buttons>
         <ion-avatar slot="start">
-            <ion-img src="assets/images/ocio.png"></ion-img>
+            <ion-img style="width: 90%" [src]="grupo.imagen"></ion-img>
         </ion-avatar>
-        <ion-title>Nombre del grupo</ion-title>
+        <ion-title>{{ grupo.nombre }}</ion-title>
     </ion-toolbar>
 </ion-header>
 

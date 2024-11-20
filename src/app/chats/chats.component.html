@@ -1,5 +1,5 @@
 <ion-content>
-    <ion-list>
+    <ion-list *ngIf="grupos.length > 0; else noGroups">
         <ion-item *ngFor="let grupo of grupos" class="chat-item" lines="none" (click)="goToChatUnico(grupo.grupoId)">
             <ion-avatar slot="start">
                 <img src="assets/images/AIOsf.png" alt="Imagen del grupo" />
@@ -11,6 +11,12 @@
             </ion-label>
         </ion-item>
     </ion-list>
+
+    <ng-template #noGroups>
+        <ion-item>
+            <ion-label style="font-size: 5vw; margin: 4%; text-align: center">No perteneces a ningun grupo todavia</ion-label>
+        </ion-item>
+    </ng-template>
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button color="primary" (click)="crearGrupo()">

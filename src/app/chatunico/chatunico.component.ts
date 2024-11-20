@@ -8,6 +8,7 @@ import { NavbarFooterService } from '../navbar-footer.service';
 import { addIcons } from "ionicons";
 import { attach, videocamOutline, arrowUndo, ellipsisVertical, mic } from "ionicons/icons";
 import { Router } from '@angular/router';
+import {GrupoService} from "../Service/grupo.service";
 
 @Component({
     selector: 'app-chatunico',
@@ -29,7 +30,8 @@ export class ChatUnicoComponent implements OnInit, OnDestroy {
         private navbarFooterService: NavbarFooterService,
         private router: Router,
         private actionSheetController: ActionSheetController,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private grupoService: GrupoService,
     ) {
         addIcons({ videocamOutline, attach, arrowUndo, ellipsisVertical, mic });
     }
@@ -59,17 +61,21 @@ export class ChatUnicoComponent implements OnInit, OnDestroy {
 
     loadGrupoData() {
         console.log('Cargando grupo con id:', this.grupoId);
-        this.grupo = {
-            grupoId: this.grupoId,
-            nombre: 'Grupo ' + this.grupoId,
-            descripcion: 'Descripción del grupo ' + this.grupoId,
-            fechaCreacion: new Date().toISOString(),
-            imagen: 'assets/images/grupo' + this.grupoId + '.png'
-        };
+        if (this.grupoId) {
+            this.grupoService.getGrupoPorId(this.grupoId).subscribe({
+                next: (grupoData) => {
+                    this.grupo = grupoData;
+                    console.log('Grupo cargado:', this.grupo);
+                },
+                error: (error) => {
+                    console.error('Error al cargar el grupo:', error);
+                }
+            });
+        }
     }
 
     goToChat() {
-        this.router.navigate(['/chats']); // Cambia '/chat' a la ruta correcta
+        this.router.navigate(['/chats']);
     }
 
     async presentActionSheet() {

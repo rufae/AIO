@@ -3,6 +3,12 @@ import { IonicModule } from "@ionic/angular";
 import { UsuarioService } from '../Service/usuario.service';
 import { AuthService } from '../Service/auth.service';
 import {CommonModule} from "@angular/common";
+import { addIcons} from "ionicons";
+import {airplane} from "ionicons/icons";
+
+addIcons({
+    airplane: airplane,
+});
 
 @Component({
     selector: 'app-perfil',
@@ -11,7 +17,7 @@ import {CommonModule} from "@angular/common";
     standalone: true,
     imports: [
         IonicModule,
-        CommonModule
+        CommonModule,
     ]
 })
 export class PerfilComponent implements OnInit {
@@ -20,7 +26,7 @@ export class PerfilComponent implements OnInit {
 
     constructor(
         private usuarioService: UsuarioService,
-        private authService: AuthService
+        private authService: AuthService,
     ) {}
 
     ngOnInit() {

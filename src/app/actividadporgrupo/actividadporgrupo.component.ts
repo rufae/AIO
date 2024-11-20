@@ -72,6 +72,7 @@ export class ActividadporgrupoComponent implements OnInit {
             error: error => {
                 console.error('Error al cargar el grupo:', error);
                 if (error.status === 404) {
+                    this.actividades = [];
                     console.error('El grupo no existe o la URL es incorrecta.');
                 }
             },
@@ -79,9 +80,10 @@ export class ActividadporgrupoComponent implements OnInit {
         });
     }
 
-    agregarActividad(){
-        this.router.navigate(["/proponer-actividad"])
+    agregarActividad() {
+        this.router.navigate([`/proponer-actividad/${this.grupoId}`]);
     }
+
 
     cargarActividades() {
         this.actividadService.obtenerActividadesPorGrupo(this.grupoId).subscribe({
@@ -96,7 +98,9 @@ export class ActividadporgrupoComponent implements OnInit {
                 });
             },
             error: error => {
-                console.error('Error al cargar actividades:', error);
+                if (error.status === 404) {
+                    this.actividades = [];
+                }
             }
         });
     }

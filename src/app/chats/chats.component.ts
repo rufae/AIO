@@ -63,7 +63,12 @@ export class ChatsComponent implements OnInit {
                 this.grupos = grupos;
                 console.log('Grupos del usuario:', grupos);
             },
-            error: error => console.log('Error:', error),
+            error: error => {
+                console.log('Error:', error);
+                if (error.status === 404) {
+                    this.grupos = [];
+                }
+            },
             complete: () => console.log('Petición completada')
         });
     }
